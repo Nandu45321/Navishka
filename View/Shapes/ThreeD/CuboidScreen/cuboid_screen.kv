@@ -1,0 +1,110 @@
+<CuboidScreenView>:
+    name: "cuboid screen"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Cuboid"
+            pos_hint: {'top': 1}
+            left_action_items: [['arrow-left', lambda x: app.set_current_screen("main screen")]]
+        ScrollView:
+            do_scroll_x: False
+            StackLayout:
+                size_hint_y: None
+                height:self.minimum_height
+                Label:
+                    size_hint: 1, None
+                    height: dp(5)
+                Label:
+                    text: 'Length  :'
+                    size_hint: 0.5, None
+                    height:dp(60)
+                    halign: "center"
+                    font_size: '16sp'
+                MDTextField:
+                    id: length_value
+                    size_hint: 0.5, None
+                    color_mode: "accent"
+                    halign: "auto"
+                    multiline: False
+                    input_type: "number"
+                    input_filter: "float"
+                    on_text_validate: root.queans()
+                Label:
+                    text: 'Breadth  :'
+                    size_hint: 0.5, None
+                    height:dp(60)
+                    halign: "center"
+                    font_size: '16sp'
+                MDTextField:
+                    id: breadth_value
+                    size_hint: 0.5, None
+                    color_mode: "accent"
+                    halign: "auto"
+                    multiline: False
+                    input_type: "number"
+                    input_filter: "float"
+                    on_text_validate: root.queans()
+                Label:
+                    text: 'Height  :'
+                    size_hint: 0.5, None
+                    height:dp(60)
+                    halign: "center"
+                    font_size: '16sp'
+                MDTextField:
+                    id: height_value
+                    size_hint: 0.5, None
+                    color_mode: "accent"
+                    halign: "auto"
+                    multiline: False
+                    input_type: "number"
+                    input_filter: "float"
+                    on_text_validate: root.queans()
+
+                MDSeparator:
+
+                MDIconButton:
+                    text: " "
+                    icon: 'arrow-down'
+                    pos_hint: 0,0
+                    size_hint: 1, None
+                    height: dp(60)
+                    pos_hint: {'center_x': 1}
+                    radius: 0, 0, 0, 0
+                    on_release: root.queans()
+                MDSeparator:
+                Label:
+                    text: 'Volume  :'
+                    size_hint: 0.5, None
+                    height:dp(60)
+                    halign: "center"
+                    font_size: '16sp'
+                MDTextField:
+                    id: volume_value
+                    size_hint: 0.5, None
+                    color_mode: "accent"
+                    halign: "auto"
+                    disabled: True
+                Label:
+                    text: 'T. S. A.  :'
+                    size_hint: 0.5, None
+                    height:dp(60)
+                    halign: "center"
+                    font_size: '16sp'
+                MDTextField:
+                    id: tsa_value
+                    size_hint: 0.5, None
+                    color_mode: "accent"
+                    halign: "auto"
+                    disabled: True
+                Label:
+                    text: 'Diagonal  :'
+                    size_hint: 0.5, None
+                    height:dp(60)
+                    halign: "center"
+                    font_size: '16sp'
+                MDTextField:
+                    id: diagonal_value
+                    size_hint: 0.5, None
+                    color_mode: "accent"
+                    halign: "auto"
+                    disabled: True
