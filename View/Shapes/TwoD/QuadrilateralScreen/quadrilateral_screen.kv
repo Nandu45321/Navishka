@@ -1,0 +1,85 @@
+<QuadrilateralScreenView>:
+    name: "quadrilateral screen"
+    MDTopAppBar:
+        title: "Quadrilateral"
+        pos_hint: {'top': 1}
+        left_action_items: [['arrow-left', lambda x: app.set_current_screen("main screen")]]
+    ScrollView:
+        do_scroll_x: False
+        pos_hint: {'top': 0.892}
+        size_hint_y: 0.9127
+        StackLayout:
+            size_hint_y: None
+            height:self.minimum_height
+            Label:
+                size_hint: 1, None
+                height: dp(10)
+            Label:
+                text: 'Diagonal  :'
+                size_hint: 0.5, None
+                height:dp(60)
+                halign: "center"
+                font_size: '16sp'
+            MDTextField:
+                id: diagonal_value
+                size_hint: 0.5, None
+                color_mode: "accent"
+                halign: "auto"
+                multiline: False
+                input_type: "number"
+                input_filter: "float"
+                on_text_validate: root.queans()
+            Label:
+                text: 'Perpendicular Height 1  :'
+                size_hint: 0.5, None
+                height:dp(60)
+                halign: "center"
+                font_size: '16sp'
+            MDTextField:
+                id: perpendicular_height_1_value
+                size_hint: 0.5, None
+                color_mode: "accent"
+                halign: "auto"
+                multiline: False
+                input_type: "number"
+                input_filter: "float"
+                on_text_validate: root.queans()
+            Label:
+                text: 'Perpendicular Height 2  :'
+                size_hint: 0.5, None
+                height:dp(60)
+                halign: "center"
+                font_size: '16sp'
+            MDTextField:
+                id: perpendicular_height_2_value
+                size_hint: 0.5, None
+                color_mode: "accent"
+                halign: "auto"
+                multiline: False
+                input_type: "number"
+                input_filter: "float"
+                on_text_validate: root.queans()
+
+            MDSeparator:
+            MDIconButton:
+                text: " "
+                icon: 'arrow-down'
+                pos_hint: 0,0
+                size_hint: 1, None
+                height: dp(60)
+                pos_hint: {'center_x': 1}
+                radius: 0, 0, 0, 0
+                on_release: root.queans()
+            MDSeparator:
+            Label:
+                text: 'Area  :'
+                size_hint: 0.5, None
+                height:dp(60)
+                halign: "center"
+                font_size: '16sp'
+            MDTextField:
+                id: area_value
+                size_hint: 0.5, None
+                color_mode: "accent"
+                halign: "auto"
+                disabled: True
