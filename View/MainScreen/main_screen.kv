@@ -32,6 +32,34 @@
         halign: 'center'
         size_hint: 1, 0.2
 
+<TwoDNavigation>
+    ScrollView:
+        do_scroll_x: False
+        scroll_type: ['bars', 'content']
+        smooth_scroll_end: '10px'
+        BoxLayout:
+            size_hint_y: None
+            height: self.minimum_height
+            padding: '3px'
+            spacing: '3px'
+            BoxLayout:
+                spacing: '3px'
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                pos_hint: {"top": 1}
+                Button:
+                    on_release: print("Button 1")
+
+
+            BoxLayout:
+                spacing: '3px'
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                pos_hint: {"top": 1}
+                Button:
+                    on_release: print("Button 2")
 
 <MainScreenView>:
     name: "main screen"
@@ -53,35 +81,8 @@
                             text: "2D"
                             name: "2D screen"
                             icon: "square-outline"
-                            Button:
-                                pos_hint:{'top' :1}
-                            ScrollView:
-                                do_scroll_x: False
-                                scroll_type: ['bars', 'content']
-                                smooth_scroll_end: '10px'
-                                BoxLayout:
-                                    size_hint_y: None
-                                    height: self.minimum_height
-                                    padding: '3px'
-                                    spacing: '3px'
-                                    BoxLayout:
-                                        spacing: '3px'
-                                        orientation: 'vertical'
-                                        size_hint_y: None
-                                        height: self.minimum_height
-                                        pos_hint: {"top": 1}
-                                        Button:
-                                            on_release: print("Button 1")
+                            on_switch_tabs: app.on_switch_tabs(*args)
 
-
-                                    BoxLayout:
-                                        spacing: '3px'
-                                        orientation: 'vertical'
-                                        size_hint_y: None
-                                        height: self.minimum_height
-                                        pos_hint: {"top": 1}
-                                        Button:
-                                            on_release: print("Button 2")
 
 
                         MDNavigationItem:
