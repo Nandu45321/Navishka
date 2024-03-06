@@ -1,4 +1,5 @@
 from random import random
+
 from kivy.animation import Animation
 from kivy.clock import Clock
 from kivy.uix.gridlayout import GridLayout
@@ -8,7 +9,7 @@ from kivy3 import Mesh, Material
 from kivy3 import PerspectiveCamera
 from kivy3 import Renderer, Scene
 from kivy3.extras.geometries import BoxGeometry
-from kivymd.uix.snackbar import Snackbar
+from kivymd.uix.snackbar import MDSnackbar
 
 
 class ThreeD(GridLayout):
@@ -155,4 +156,4 @@ class SphereScreenView(Screen):
         else:
             self.ids.volume_value.hint_text = ''
             self.ids.tsa_value.hint_text = ''
-            Snackbar(text="[color=#ff6961]Please fill the all the required blanks[/color]", ).open()
+            MDSnackbar(text="[color=#ff6961]Please fill the all the required blanks[/color]", ).open()

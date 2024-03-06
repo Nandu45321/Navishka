@@ -1,6 +1,7 @@
-from kivy.uix.screenmanager import Screen
-from kivymd.uix.snackbar import Snackbar
 import math
+
+from kivy.uix.screenmanager import Screen
+from kivymd.uix.snackbar import MDSnackbar
 
 
 class CubeScreenView(Screen):
@@ -18,4 +19,4 @@ class CubeScreenView(Screen):
             self.ids.tsa_value.hint_text = ''
             self.ids.lsa_value.hint_text = ''
             self.ids.diagonal_value.hint_text = ''
-            Snackbar(text="[color=#ff6961]Please fill the all the required blanks[/color]", ).open()
+            MDSnackbar(text="[color=#ff6961]Please fill the all the required blanks[/color]", ).open()

@@ -1,12 +1,11 @@
-from kivy.uix.screenmanager import Screen
-from kivymd.uix.snackbar import Snackbar
 from kivy.clock import Clock
-from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.screenmanager import Screen
 from kivy3 import Mesh, Material
 from kivy3 import PerspectiveCamera
 from kivy3 import Renderer, Scene
 from kivy3.extras.geometries import BoxGeometry
+from kivymd.uix.snackbar import MDSnackbar
 
 
 class TD(BoxLayout):
@@ -39,7 +38,7 @@ class TD(BoxLayout):
         self.renderer.bind(size=self._adjust_aspect)
 
         self.add_widget(self.renderer)
-        Clock.schedule_interval(self.rotate_cube, 1/60)  # FPS = 60
+        Clock.schedule_interval(self.rotate_cube, 1 / 60)  # FPS = 60
         Clock.max_iteration = 60
 
     def _adjust_aspect(self, *args):
@@ -63,4 +62,4 @@ class RegularHexagonScreenView(Screen):
         else:
             self.ids.area_value.hint_text = ''
             self.ids.perimeter_value.hint_text = ''
-            Snackbar(text="[color=#ff6961]Please fill the all the required blanks[/color]", ).open()
+            MDSnackbar(text="[color=#ff6961]Please fill the all the required blanks[/color]", ).open()

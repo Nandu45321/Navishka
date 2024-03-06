@@ -1,5 +1,5 @@
 from kivy.uix.screenmanager import Screen
-from kivymd.uix.snackbar import Snackbar
+from kivymd.uix.snackbar import MDSnackbar
 
 
 class RegularNonagonScreenView(Screen):
@@ -11,5 +11,4 @@ class RegularNonagonScreenView(Screen):
         else:
             self.ids.area_value.hint_text = ''
             self.ids.perimeter_value.hint_text = ''
-            Snackbar(text="[color=#ff6961]Please fill the all the required blanks[/color]", ).open()
-
+            MDSnackbar(text="[color=#ff6961]Please fill the all the required blanks[/color]", ).open()
