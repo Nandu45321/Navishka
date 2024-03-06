@@ -36,23 +36,25 @@
 <MainScreenView>:
     name: "main screen"
     MDNavigationLayout:
-        ScreenManager:
-            Screen:
-                BoxLayout:
+        MDScreenManager:
+            MDScreen:
+                MDBoxLayout:
                     orientation: 'vertical'
                     MDTopAppBar:
-                        title: "J.A.N"
+                        title: "Navishka"
                         elevation: 10
                         left_action_items: [["menu", lambda x : navigation_drawer.set_state("toggle")]]
                         #left_action_items: [["menu", lambda x : app.root.current]]
                         #right_action_items: [["history")]]
-                    MDBottomNavigation:
+                    MDNavigationBar:
                         text_color_active: gch("#673AB7")
-                        MDBottomNavigationItem:
+                        pos_hint: {'top': 0.5}
+                        MDNavigationItem:
                             text: "2D"
                             name: "2D screen"
                             icon: "square-outline"
-
+                            Button:
+                                pos_hint:{'top' :1}
                             ScrollView:
                                 do_scroll_x: False
                                 scroll_type: ['bars', 'content']
@@ -68,62 +70,9 @@
                                         size_hint_y: None
                                         height: self.minimum_height
                                         pos_hint: {"top": 1}
-                                        SmallCard:                                                # 1
-                                            shape: 'Triangle'
-                                            inputs: 'Base, Height'
-                                            outputs: 'Area'
-                                            on_release: app.set_current_screen("triangle screen")
-                                        SmallCard:                                               # 2
-                                            shape: 'Equilateral Triangle'
-                                            inputs: 'Side'
-                                            outputs: 'Area, Perimeter'
-                                            height: self.medium
-                                            on_release: app.set_current_screen("equilateral triangle screen")
-                                        SmallCard:                                               # 2
-                                            shape: 'Quadrilateral'
-                                            inputs: 'Diagonal, Perpendicular Heights'
-                                            outputs: 'Area'
-                                            height: self.large
-                                            on_release: app.set_current_screen("quadrilateral screen")
-                                        SmallCard:                                               # 3
-                                            shape: 'Parallelogram'
-                                            inputs: 'Height, Base, Side'
-                                            outputs: 'Area, Perimeter, Diagonals'
-                                            height: self.medium
-                                            on_release: app.set_current_screen("parallelogram screen")
-                                        SmallCard:                                               # 1
-                                            shape: 'Rhombus'
-                                            inputs: 'Diagonals'
-                                            outputs: 'Area, Perimeter, Side'
-                                            on_release: app.set_current_screen("rhombus screen")
-                                        SmallCard:                                               # 3
-                                            shape: 'Kite'
-                                            inputs: 'Diagonals, Sides'
-                                            outputs: 'Area, perimeter'
-                                            height: self.medium
-                                            on_release: app.set_current_screen("kite screen")
-                                        SmallCard:                                               # 2
-                                            shape: 'Regular Hexagon'
-                                            inputs: 'Side'
-                                            outputs: 'Area, perimeter'
-                                            height: self.large
-                                            on_release: app.set_current_screen("regular hexagon screen")
-                                        SmallCard:                                               # 1
-                                            shape: 'Regular Octagon'
-                                            inputs: 'Side'
-                                            outputs: 'Area, perimeter'
-                                            height: self.medium
-                                            on_release: app.set_current_screen("regular octagon screen")
-                                        SmallCard:                                               # 3
-                                            shape: 'Regular Decagon'
-                                            inputs: 'Side'
-                                            outputs: 'Area, perimeter'
-                                            on_release: app.set_current_screen("regular decagon screen")
-                                        SmallCard:                                               # 1
-                                            shape: 'Semi Circle'
-                                            inputs: 'Radius'
-                                            outputs: 'Area, perimeter'
-                                            on_release: app.set_current_screen("semi circle screen")
+                                        Button:
+                                            on_release: print("Button 1")
+
 
                                     BoxLayout:
                                         spacing: '3px'
@@ -131,64 +80,11 @@
                                         size_hint_y: None
                                         height: self.minimum_height
                                         pos_hint: {"top": 1}
-                                        SmallCard:                                               # 3
-                                            shape: 'Right Triangle'
-                                            inputs: 'Side 1, Side 2'
-                                            outputs: 'Area, Perimeter, Hypotenuse'
-                                            height: self.large
-                                            on_release: app.set_current_screen("right triangle screen")
-                                        SmallCard:                                               # 1
-                                            shape: 'Scalene Triangle'
-                                            inputs: 'All Sides'
-                                            outputs: 'Area, Perimeter'
-                                            on_release: app.set_current_screen("scalene triangle screen")
-                                        SmallCard:                                               # 1
-                                            shape: 'Trapezium'
-                                            inputs: 'Height, All Sides'
-                                            outputs: 'Area, Perimeter'
-                                            on_release: app.set_current_screen("trapezium screen")
-                                        SmallCard:                                               # 2
-                                            shape: 'Rectangle'
-                                            inputs: 'Length, Breadth'
-                                            outputs: 'Area, Perimeter, Diagonal'
-                                            height: self.medium
-                                            on_release: app.set_current_screen("rectangle screen")
-                                        SmallCard:                                               # 3
-                                            shape: 'Square'
-                                            inputs: 'Side'
-                                            output: 'Area, Perimeter, Diagonal'
-                                            height: self.large
-                                            on_release: app.set_current_screen("square screen")
-                                        SmallCard:                                               # 2
-                                            shape: 'Regular Pentagon'
-                                            inputs: 'Side'
-                                            outputs: 'Area, perimeter'
-                                            height: self.medium
-                                            on_release: app.set_current_screen("regular pentagon screen")
-                                        SmallCard:                                               # 1
-                                            shape: 'Regular Heptagon'
-                                            inputs: 'Side'
-                                            outputs: 'Area, perimeter'
-                                            on_release: app.set_current_screen("regular heptagon screen")
-                                        SmallCard:                                               # 3
-                                            shape: 'Regular Nonagon'
-                                            inputs: 'Side'
-                                            outputs: 'Area, perimeter'
-                                            height: self.medium
-                                            on_release: app.set_current_screen("regular nonagon screen")
-                                        SmallCard:                                               # 2
-                                            shape: 'Circle'
-                                            inputs: 'Radius'
-                                            outputs: 'Area, Circmference'
-                                            height: self.medium
-                                            on_release: app.set_current_screen("circle screen")
-                                        SmallCard:                                               # 2
-                                            shape: 'Ellipse'
-                                            inputs: 'X, Y'
-                                            outputs: 'Area, Circmference'
-                                            on_release: app.set_current_screen("ellipse screen")
+                                        Button:
+                                            on_release: print("Button 2")
 
-                        MDBottomNavigationItem:
+
+                        MDNavigationItem:
                             text: "3D"
                             name: "3D screen"
                             icon: "cube"
@@ -207,71 +103,6 @@
                                         orientation: 'vertical'
                                         size_hint_y: None
                                         height: self.minimum_height
-                                        SmallCard:                                                # 1
-                                            shape: 'Cube'
-                                            inputs: 'Side'
-                                            outputs: 'Volume, T. S. A., L. S. A., Diagonal'
-                                            on_release: app.set_current_screen("cube screen")
-                                        SmallCard:                                               # 2
-                                            shape: 'Equilateral Triangle'
-                                            inputs: 'Side'
-                                            outputs: 'Area, Perimeter'
-                                            height: self.medium
-                                            on_release: app.set_current_screen("equilateral triangle screen")
-                                        SmallCard:                                               # 2
-                                            shape: 'Quadrilateral'
-                                            inputs: 'Diagonal, Perpendicular Heights'
-                                            outputs: 'Area'
-                                            height: self.medium
-                                            on_release: app.set_current_screen("quadrilateral screen")
-                                        SmallCard:                                               # 3
-                                            shape: 'Parallelogram'
-                                            inputs: 'Height, Base, Side'
-                                            outputs: 'Area, Perimeter, Diagonals'
-                                            height: self.large
-                                            on_release: app.set_current_screen("parallelogram screen")
-                                        SmallCard:                                               # 1
-                                            shape: 'Rhombus'
-                                            inputs: 'Diagonals'
-                                            outputs: 'Area, Perimeter, Side'
-                                            on_release: app.set_current_screen("rhombus screen")
-                                        SmallCard:                                               # 3
-                                            shape: 'Sphere'
-                                            inputs: 'Radius'
-                                            outputs: 'Volume, T. S. A.'
-                                            height: self.large
-                                            on_release: app.set_current_screen("sphere screen")
-                                        SmallCard:                                               # 2
-                                            shape: 'Regular Hexagon'
-                                            inputs: 'Side'
-                                            outputs: 'Area, perimeter'
-                                            height: self.medium
-                                            on_release: app.set_current_screen("regular hexagon screen")
-                                        SmallCard:                                               # 1
-                                            shape: 'Regular Octagon'
-                                            inputs: 'Side'
-                                            outputs: 'Area, perimeter'
-                                            on_release: app.set_current_screen("regular octagon screen")
-                                        SmallCard:                                               # 3
-                                            shape: 'Regular Decagon'
-                                            inputs: 'Side'
-                                            outputs: 'Area, perimeter'
-                                            height: self.large
-                                            on_release: app.set_current_screen("regular decagon screen")
-                                        SmallCard:                                               # 1
-                                            shape: 'Semi Circle'
-                                            inputs: 'Radius'
-                                            outputs: 'Area, perimeter'
-                                            on_release: app.set_current_screen("semi circle screen")
-                                        SmallCard:                                               # 2
-                                            shape: 'Triangle'
-                                            height: self.medium
-                                            on_release: app.set_current_screen()
-                                        SmallCard:                                               # 3
-                                            shape: 'Triangle'
-                                            height: self.large
-                                            on_release: app.set_current_screen()
-
 
 
 
@@ -281,77 +112,6 @@
                                         orientation: 'vertical'
                                         size_hint_y: None
                                         height: self.minimum_height
-
-                                        SmallCard:                                               # 3
-                                            shape: 'Cuboid'
-                                            inputs: 'Length, Breadth, Height'
-                                            outputs: 'Volume, T. S. A., Diagonal'
-                                            height: self.large
-                                            on_release: app.set_current_screen("cuboid screen")
-                                        SmallCard:                                               # 1
-                                            shape: 'Scalene Triangle'
-                                            inputs: 'All Sides'
-                                            outputs: 'Area, Perimeter'
-                                            on_release: app.set_current_screen("scalene triangle screen")
-                                        SmallCard:                                               # 1
-                                            shape: 'Trapezium'
-                                            inputs: 'Height, All Sides'
-                                            outputs: 'Area, Perimeter'
-                                            on_release: app.set_current_screen("trapezium screen")
-                                        SmallCard:                                               # 2
-                                            shape: 'Rectangle'
-                                            inputs: 'Length, Breadth'
-                                            outputs: 'Area, Perimeter, Diagonal'
-                                            height: self.medium
-                                            on_release: app.set_current_screen("rectangle screen")
-                                        SmallCard:                                               # 3
-                                            shape: 'Square'
-                                            inputs: 'Side'
-                                            output: 'Area, Perimeter, Diagonal'
-                                            height: self.large
-                                            on_release: app.set_current_screen("square screen")
-                                        SmallCard:                                               # 2
-                                            shape: 'Regular Pentagon'
-                                            inputs: 'Side'
-                                            outputs: 'Area, perimeter'
-                                            height: self.medium
-                                            on_release: app.set_current_screen("regular pentagon screen")
-                                        SmallCard:                                               # 1
-                                            shape: 'Regular Heptagon'
-                                            inputs: 'Side'
-                                            outputs: 'Area, perimeter'
-                                            on_release: app.set_current_screen("regular heptagon screen")
-                                        SmallCard:                                               # 3
-                                            shape: 'Regular Nonagon'
-                                            inputs: 'Side'
-                                            outputs: 'Area, perimeter'
-                                            height: self.large
-                                            on_release: app.set_current_screen("regular nonagon screen")
-                                        SmallCard:                                               # 2
-                                            shape: 'Circle'
-                                            inputs: 'Radius'
-                                            outputs: 'Area, Circmference'
-                                            height: self.medium
-                                            on_release: app.set_current_screen("circle screen")
-                                        SmallCard:                                               # 2
-                                            shape: 'Ellipse'
-                                            inputs: 'X, Y'
-                                            outputs: 'Area, Circmference'
-                                            height: self.medium
-                                            on_release: app.set_current_screen("ellipse screen")
-                                        SmallCard:                                               # 3
-                                            shape: 'Triangle'
-                                            height: self.large
-                                            on_release: app.set_current_screen()
-                                        SmallCard:                                               # 1
-                                            shape: 'Triangle'
-                                            on_release: app.set_current_screen()
-
-
-
-
-
-
 
 
 
