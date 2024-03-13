@@ -32,97 +32,51 @@
         halign: 'center'
         size_hint: 1, 0.2
 
-<TwoDNavigation>
-    ScrollView:
-        do_scroll_x: False
-        scroll_type: ['bars', 'content']
-        smooth_scroll_end: '10px'
-        BoxLayout:
-            size_hint_y: None
-            height: self.minimum_height
-            padding: '3px'
-            spacing: '3px'
-            BoxLayout:
-                spacing: '3px'
-                orientation: 'vertical'
-                size_hint_y: None
-                height: self.minimum_height
-                pos_hint: {"top": 1}
-                Button:
-                    on_release: print("Button 1")
+<TwoDNavigationItem>:
+    id: TwoDNavigationItem
+    MDNavigationItemIcon:
+        icon: root.icon
+    MDNavigationItemLabel:
+        text: root.text
 
 
-            BoxLayout:
-                spacing: '3px'
-                orientation: 'vertical'
-                size_hint_y: None
-                height: self.minimum_height
-                pos_hint: {"top": 1}
-                Button:
-                    on_release: print("Button 2")
+<TwoDScreen>:
+    name: '2D'
+    MDLabel:
+        text: '2D'
+        halign: 'center'
+
+
+<ThreeDScreen>:
+    name: '3D'
+    MDLabel:
+        text: '3D'
+        halign: 'center'
 
 <MainScreenView>:
     name: "main screen"
-    MDNavigationLayout:
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: self.theme_cls.backgroundColor
         MDScreenManager:
-            MDScreen:
-                MDBoxLayout:
-                    orientation: 'vertical'
-                    MDTopAppBar:
-                        title: "Navishka"
-                        elevation: 10
-                        left_action_items: [["menu", lambda x : navigation_drawer.set_state("toggle")]]
-                        #left_action_items: [["menu", lambda x : app.root.current]]
-                        #right_action_items: [["history")]]
-                    MDNavigationBar:
-                        text_color_active: gch("#673AB7")
-                        pos_hint: {'top': 0.5}
-                        MDNavigationItem:
-                            text: "2D"
-                            name: "2D screen"
-                            icon: "square-outline"
-                            on_switch_tabs: app.on_switch_tabs(*args)
+            id: entry_screen_manager
 
+            TwoDScreen:
 
+            ThreeDScreen:
 
-                        MDNavigationItem:
-                            text: "3D"
-                            name: "3D screen"
-                            icon: "cube"
+        MDNavigationBar:
+            id: NavBar
 
-                            ScrollView:
-                                do_scroll_x: False
-                                scroll_type: ['bars', 'content']
-                                smooth_scroll_end: '10px'
-                                BoxLayout:
-                                    size_hint_y: None
-                                    height: self.minimum_height
-                                    padding: '3px'
-                                    spacing: '3px'
-                                    BoxLayout:
-                                        spacing: '3px'
-                                        orientation: 'vertical'
-                                        size_hint_y: None
-                                        height: self.minimum_height
+            TwoDNavigationItem
+                icon: 'square-outline'
+                text: '2D'
+                active: True
+                on_release:
+                    root.on_switch_tabs(bar= NavBar, item= 'TwoDNavigationItem', item_icon='square', item_text = '2D')
 
-
-
-
-                                    BoxLayout:
-                                        spacing: '3px'
-                                        orientation: 'vertical'
-                                        size_hint_y: None
-                                        height: self.minimum_height
-
-
-
-        MDNavigationDrawer:
-            id: navigation_drawer
-            opening_time: 0.5
-            closing_time: 0.4
-            enable_swiping: True
-            #type: "standard"
-            #status: "opening_with_swipe"
-            BoxLayout:
-                orientation: 'vertical'
-                padding: dp(5)
+            TwoDNavigationItem
+                icon: 'cube'
+                text: '3D'
+                on_release:
+                    root.on_switch_tabs(bar= NavBar, item= 'TwoDNavigationItem', item_icon='square', item_text = '3D')

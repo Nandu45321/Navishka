@@ -1,7 +1,8 @@
 from kivy.properties import StringProperty
 from kivy.uix.screenmanager import Screen
 from kivymd.uix.card import MDCard
-from kivymd.uix.navigationbar import MDNavigationBar, MDNavigationItem
+from kivymd.uix.navigationbar import MDNavigationItem, MDNavigationBar
+from kivymd.uix.screen import MDScreen
 
 
 class SmallCard(MDCard):
@@ -15,6 +16,19 @@ class SmallCard(MDCard):
     # 2.65
 
 
+class TwoDNavigationItem(MDNavigationItem):
+    icon = StringProperty()
+    text = StringProperty()
+
+
+class TwoDScreen(MDScreen):
+    ...
+
+
+class ThreeDScreen(MDScreen):
+    ...
+
+
 class MainScreenView(Screen):
 
     def on_switch_tabs(
@@ -22,6 +36,5 @@ class MainScreenView(Screen):
             bar: MDNavigationBar,
             item: MDNavigationItem,
             item_icon: str,
-            item_text: str,
-    ):
-        self.root.ids.screen_manager.current = item_text
+            item_text: str, ):
+        self.ids.entry_screen_manager.current = item_text
