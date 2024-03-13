@@ -74,9 +74,12 @@
                 active: True
                 on_release:
                     root.on_switch_tabs(bar= NavBar, item= 'TwoDNavigationItem', item_icon='square', item_text = '2D')
+                    entry_screen_manager.transition.direction='right'
 
             TwoDNavigationItem
                 icon: 'cube'
                 text: '3D'
                 on_release:
                     root.on_switch_tabs(bar= NavBar, item= 'TwoDNavigationItem', item_icon='square', item_text = '3D')
+                    entry_screen_manager.transition.direction='left'
+
