@@ -17,7 +17,7 @@ class NavishkaApp(MDApp):
         self.theme_cls.theme_style = "Dark"
         self.theme_cls.primary_hue = '50'
         self.theme_cls.material_style = "M3"
-        self.theme_cls.accent_palette = 'Blue'
+        # self.theme_cls.accent_palette = 'Blue'
 
     def set_current_screen(self, name: str, switch: bool = True):
         if not self.root.has_screen(name):
