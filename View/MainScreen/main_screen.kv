@@ -67,21 +67,18 @@
 
         MDNavigationBar:
             id: NavBar
-
+            # I do not know how the below three lines work. Don't touch them.
+            on_switch_tabs:
+                root.on_switch_tabs(bar=NavBar, item='TwoDNavigationItem', item_icon='square', item_text='2D' if entry_screen_manager.current == '3D' else '3D')
+                entry_screen_manager.transition.direction = 'left' if entry_screen_manager.current == '3D' else 'right'
             TwoDNavigationItem
                 icon: 'square-outline'
                 text: '2D'
                 active: True
-                on_release:
-                    root.on_switch_tabs(bar=NavBar, item='TwoDNavigationItem', item_icon='square', item_text='2D')
-                    entry_screen_manager.transition.direction = 'right'
 
             TwoDNavigationItem
                 icon: 'cube'
                 text: '3D'
-                on_release:
-                    root.on_switch_tabs(bar=NavBar, item='TwoDNavigationItem', item_icon='square', item_text='3D')
-                    entry_screen_manager.transition.direction = 'left'
 
 
 
@@ -90,10 +87,10 @@
         opening_time: 0.5
         closing_time: 0.4
         enable_swiping: True
-        #type: "standard"
+        type: "standard"
         status: "opening_with_swipe"
         BoxLayout:
             orientation: 'vertical'
-            Button:
-                text: 'BUTTON'
-                on_release: print("PRESSED")
+            MDLabel:
+                text: 'Under Construction'
+                halign: 'center'
