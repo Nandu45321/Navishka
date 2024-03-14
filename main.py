@@ -9,7 +9,7 @@ from View.screens import screens
 
 if hasattr(sys, 'getandroidapilevel'):
     pass
-elif sys.platform == 'linux':
+else:
     Window.size = (324, 710)
 
 
