@@ -1,3 +1,5 @@
+import sys
+
 from kivy.core.window import Window
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager
@@ -5,7 +7,10 @@ from kivymd.app import MDApp
 
 from View.screens import screens
 
-Window.size = (324, 710)
+if hasattr(sys, 'getandroidapilevel'):
+    pass
+elif sys.platform == 'linux':
+    Window.size = (324, 710)
 
 
 class NavishkaApp(MDApp):
