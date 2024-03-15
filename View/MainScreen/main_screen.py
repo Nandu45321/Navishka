@@ -16,7 +16,7 @@ class SmallCard(MDCard):
     # 2.65
 
 
-class TwoDNavigationItem(MDNavigationItem):
+class DNavigationItem(MDNavigationItem):
     icon = StringProperty()
     text = StringProperty()
 

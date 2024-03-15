@@ -32,8 +32,8 @@
         halign: 'center'
         size_hint: 1, 0.2
 
-<TwoDNavigationItem>:
-    id: TwoDNavigationItem
+<DNavigationItem>:
+    id: DNavigationItem
     MDNavigationItemIcon:
         icon: root.icon
     MDNavigationItemLabel:
@@ -58,27 +58,39 @@
     MDBoxLayout:
         orientation: 'vertical'
         md_bg_color: self.theme_cls.backgroundColor
-        MDScreenManager:
-            id: entry_screen_manager
 
-            TwoDScreen:
+        MDTopAppBar:
+            title: "Navishka"
+            elevation: 10
+            left_action_items: [["menu", lambda x : navigation_drawer.set_state("toggle")]]
 
-            ThreeDScreen:
+        MDBoxLayout:
+            orientation: 'vertical'
 
-        MDNavigationBar:
-            id: NavBar
-            # I do not know how the below three lines work. Don't touch them.
-            on_switch_tabs:
-                root.on_switch_tabs(bar=NavBar, item='TwoDNavigationItem', item_icon='square', item_text='2D' if entry_screen_manager.current == '3D' else '3D')
-                entry_screen_manager.transition.direction = 'left' if entry_screen_manager.current == '3D' else 'right'
-            TwoDNavigationItem
-                icon: 'square-outline'
-                text: '2D'
-                active: True
+            MDScreenManager:
+                id: entry_screen_manager
 
-            TwoDNavigationItem
-                icon: 'cube'
-                text: '3D'
+                TwoDScreen:
+
+                ThreeDScreen:
+
+            MDNavigationBar:
+                id: NavBar
+                DNavigationItem
+                    icon: 'square-outline'
+                    text: '2D'
+                    active: True
+                    on_release:
+                        root.on_switch_tabs(bar=NavBar, item='DNavigationItem', item_icon='square', item_text='2D')
+                        entry_screen_manager.transition.direction = 'right'
+
+
+                DNavigationItem
+                    icon: 'cube'
+                    text: '3D'
+                    on_release:
+                        root.on_switch_tabs(bar=NavBar, item='DNavigationItem', item_icon='square', item_text='3D')
+                        entry_screen_manager.transition.direction = 'left'
 
 
 
