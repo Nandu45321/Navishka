@@ -1,9 +1,14 @@
 <CircleScreenView>:
     name: "circle screen"
     MDTopAppBar:
-        title: "Circle"
-        pos_hint: {'top': 1}
-        left_action_items: [['arrow-left', lambda x: app.set_current_screen("main screen")]]
+        type: 'small'
+        MDTopAppBarLeadingButtonContainer:
+            MDActionTopAppBarButton:
+                icon: 'arrow-left'
+                on_release: app.set_current_screen('main screen')
+        MDTopAppBarTitle:
+            text: "Circle"
+            pos_hint: {"center_x": 0.5}
     ScrollView:
         do_scroll_x: False
         pos_hint: {'top': 0.892}
@@ -30,7 +35,7 @@
                 input_filter: "float"
                 on_text_validate: root.queans()
 
-            MDSeparator:
+            MDDivider:
             MDIconButton:
                 text: " "
                 icon: 'arrow-down'
@@ -40,7 +45,7 @@
                 pos_hint: {'center_x': 1}
                 radius: 0, 0, 0, 0
                 on_release: root.queans()
-            MDSeparator:
+            MDDivider:
             Label:
                 text: 'Area  :'
                 size_hint: 0.5, None

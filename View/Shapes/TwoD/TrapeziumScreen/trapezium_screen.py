@@ -10,15 +10,15 @@ class TrapeziumScreenView(Screen):
         side_1_input = self.ids.side_1_value.text
         side_2_input = self.ids.side_2_value.text
         if parallel_side_1_input != '' and parallel_side_2_input != '' and height_input != '':
-            self.ids.area_value.hint_text = str("{:.3f}".format(
+            self.ids.area_value.text = str("{:.3f}".format(
                 (1 / 2) * (float(parallel_side_1_input) + float(parallel_side_2_input)) * float(height_input)))
             if side_1_input != '' and side_2_input != '':
-                self.ids.perimeter_value.hint_text = str("{:.3f}".format(
+                self.ids.perimeter_value.text = str("{:.3f}".format(
                     float(parallel_side_1_input) + float(parallel_side_2_input) + float(side_1_input) + float(
                         side_2_input)))
             else:
-                self.ids.perimeter_value.hint_text = ''
+                self.ids.perimeter_value.text = ''
                 MDSnackbar(text="[color=#ff6961]Please fill the all the blanks for perimeter[/color]", ).open()
         else:
-            self.ids.area_value.hint_text = ''
+            self.ids.area_value.text = ''
             MDSnackbar(text="[color=#ff6961]Please fill the all the required blanks[/color]", ).open()

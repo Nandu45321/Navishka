@@ -57,9 +57,9 @@ class RegularHexagonScreenView(Screen):
     def queans(self):
         side_input = self.ids.side_value.text
         if side_input != '':
-            self.ids.area_value.hint_text = str("{:.3f}".format(((3 * (3 ** (1 / 2))) / 2) * (float(side_input) ** 2)))
-            self.ids.perimeter_value.hint_text = str("{:.3f}".format(6 * float(side_input)))
+            self.ids.area_value.text = str("{:.3f}".format(((3 * (3 ** (1 / 2))) / 2) * (float(side_input) ** 2)))
+            self.ids.perimeter_value.text = str("{:.3f}".format(6 * float(side_input)))
         else:
-            self.ids.area_value.hint_text = ''
-            self.ids.perimeter_value.hint_text = ''
+            self.ids.area_value.text = ''
+            self.ids.perimeter_value.text = ''
             MDSnackbar(text="[color=#ff6961]Please fill the all the required blanks[/color]", ).open()

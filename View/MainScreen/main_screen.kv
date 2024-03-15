@@ -16,7 +16,7 @@
         radius: 10,10,0,0
         allow_stretch: True
         halign: 'center'
-    MDSeparator:
+    MDDivider:
 
     MDLabel:
         text: root.shape
@@ -42,16 +42,145 @@
 
 <TwoDScreen>:
     name: '2D'
-    MDLabel:
-        text: '2D'
-        halign: 'center'
+    ScrollView:
+        do_scroll_x: False
+        scroll_type: ['bars', 'content']
+        smooth_scroll_end: '10px'
+        BoxLayout:
+            size_hint_y: None
+            height: self.minimum_height
+            padding: '3px'
+            spacing: '3px'
+            BoxLayout:
+                spacing: '3px'
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                pos_hint: {"top": 1}
+                SmallCard:                                                # 1
+                    shape: 'Triangle'
+                    inputs: 'Base, Height'
+                    outputs: 'Area'
+                    on_release: app.set_current_screen("triangle screen")
+                SmallCard:                                               # 2
+                    shape: 'Equilateral Triangle'
+                    inputs: 'Side'
+                    outputs: 'Area, Perimeter'
+                    height: self.medium
+                    on_release: app.set_current_screen("equilateral triangle screen")
+                SmallCard:                                               # 2
+                    shape: 'Quadrilateral'
+                    inputs: 'Diagonal, Perpendicular Heights'
+                    outputs: 'Area'
+                    height: self.large
+                    on_release: app.set_current_screen("quadrilateral screen")
+                SmallCard:                                               # 3
+                    shape: 'Parallelogram'
+                    inputs: 'Height, Base, Side'
+                    outputs: 'Area, Perimeter, Diagonals'
+                    height: self.medium
+                    on_release: app.set_current_screen("parallelogram screen")
+                SmallCard:                                               # 1
+                    shape: 'Rhombus'
+                    inputs: 'Diagonals'
+                    outputs: 'Area, Perimeter, Side'
+                    on_release: app.set_current_screen("rhombus screen")
+                SmallCard:                                               # 3
+                    shape: 'Kite'
+                    inputs: 'Diagonals, Sides'
+                    outputs: 'Area, perimeter'
+                    height: self.medium
+                    on_release: app.set_current_screen("kite screen")
+                SmallCard:                                               # 2
+                    shape: 'Regular Hexagon'
+                    inputs: 'Side'
+                    outputs: 'Area, perimeter'
+                    height: self.large
+                    on_release: app.set_current_screen("regular hexagon screen")
+                SmallCard:                                               # 1
+                    shape: 'Regular Octagon'
+                    inputs: 'Side'
+                    outputs: 'Area, perimeter'
+                    height: self.medium
+                    on_release: app.set_current_screen("regular octagon screen")
+                SmallCard:                                               # 3
+                    shape: 'Regular Decagon'
+                    inputs: 'Side'
+                    outputs: 'Area, perimeter'
+                    on_release: app.set_current_screen("regular decagon screen")
+                SmallCard:                                               # 1
+                    shape: 'Semi Circle'
+                    inputs: 'Radius'
+                    outputs: 'Area, perimeter'
+                    on_release: app.set_current_screen("semi circle screen")
+
+            BoxLayout:
+                spacing: '3px'
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                pos_hint: {"top": 1}
+                SmallCard:                                               # 3
+                    shape: 'Right Triangle'
+                    inputs: 'Side 1, Side 2'
+                    outputs: 'Area, Perimeter, Hypotenuse'
+                    height: self.large
+                    on_release: app.set_current_screen("right triangle screen")
+                SmallCard:                                               # 1
+                    shape: 'Scalene Triangle'
+                    inputs: 'All Sides'
+                    outputs: 'Area, Perimeter'
+                    on_release: app.set_current_screen("scalene triangle screen")
+                SmallCard:                                               # 1
+                    shape: 'Trapezium'
+                    inputs: 'Height, All Sides'
+                    outputs: 'Area, Perimeter'
+                    on_release: app.set_current_screen("trapezium screen")
+                SmallCard:                                               # 2
+                    shape: 'Rectangle'
+                    inputs: 'Length, Breadth'
+                    outputs: 'Area, Perimeter, Diagonal'
+                    height: self.medium
+                    on_release: app.set_current_screen("rectangle screen")
+                SmallCard:                                               # 3
+                    shape: 'Square'
+                    inputs: 'Side'
+                    output: 'Area, Perimeter, Diagonal'
+                    height: self.large
+                    on_release: app.set_current_screen("square screen")
+                SmallCard:                                               # 2
+                    shape: 'Regular Pentagon'
+                    inputs: 'Side'
+                    outputs: 'Area, perimeter'
+                    height: self.medium
+                    on_release: app.set_current_screen("regular pentagon screen")
+                SmallCard:                                               # 1
+                    shape: 'Regular Heptagon'
+                    inputs: 'Side'
+                    outputs: 'Area, perimeter'
+                    on_release: app.set_current_screen("regular heptagon screen")
+                SmallCard:                                               # 3
+                    shape: 'Regular Nonagon'
+                    inputs: 'Side'
+                    outputs: 'Area, perimeter'
+                    height: self.medium
+                    on_release: app.set_current_screen("regular nonagon screen")
+                SmallCard:                                               # 2
+                    shape: 'Circle'
+                    inputs: 'Radius'
+                    outputs: 'Area, Circmference'
+                    height: self.medium
+                    on_release: app.set_current_screen("circle screen")
+                SmallCard:                                               # 2
+                    shape: 'Ellipse'
+                    inputs: 'X, Y'
+                    outputs: 'Area, Circmference'
+                    on_release: app.set_current_screen("ellipse screen")
+
 
 
 <ThreeDScreen>:
     name: '3D'
-    MDLabel:
-        text: '3D'
-        halign: 'center'
 
 <MainScreenView>:
     name: "main screen"
@@ -60,37 +189,44 @@
         md_bg_color: self.theme_cls.backgroundColor
 
         MDTopAppBar:
-            title: "Navishka"
-            elevation: 10
-            left_action_items: [["menu", lambda x : navigation_drawer.set_state("toggle")]]
-
-        MDBoxLayout:
-            orientation: 'vertical'
-
-            MDScreenManager:
-                id: entry_screen_manager
-
-                TwoDScreen:
-
-                ThreeDScreen:
-
-            MDNavigationBar:
-                id: NavBar
-                DNavigationItem
-                    icon: 'square-outline'
-                    text: '2D'
-                    active: True
-                    on_release:
-                        root.on_switch_tabs(bar=NavBar, item='DNavigationItem', item_icon='square', item_text='2D')
-                        entry_screen_manager.transition.direction = 'right'
+            type: 'small'
+            MDTopAppBarLeadingButtonContainer:
+                MDActionTopAppBarButton:
+                    icon: 'menu'
+                    on_release: navigation_drawer.set_state("toggle")
+            MDTopAppBarTitle:
+                text: "Navishka"
+                pos_hint: {"center_x": 0.5}
+            MDTopAppBarTrailingButtonContainer:
+                MDActionTopAppBarButton:
+                    on_press: print("Still Alive")
 
 
-                DNavigationItem
-                    icon: 'cube'
-                    text: '3D'
-                    on_release:
-                        root.on_switch_tabs(bar=NavBar, item='DNavigationItem', item_icon='square', item_text='3D')
-                        entry_screen_manager.transition.direction = 'left'
+
+        MDScreenManager:
+            id: entry_screen_manager
+
+            TwoDScreen:
+
+            ThreeDScreen:
+
+        MDNavigationBar:
+            id: NavBar
+            DNavigationItem
+                icon: 'square-outline'
+                text: '2D'
+                active: True
+                on_release:
+                    root.on_switch_tabs(bar=NavBar, item='DNavigationItem', item_icon='square', item_text='2D')
+                    entry_screen_manager.transition.direction = 'right'
+
+
+            DNavigationItem
+                icon: 'cube'
+                text: '3D'
+                on_release:
+                    root.on_switch_tabs(bar=NavBar, item='DNavigationItem', item_icon='square', item_text='3D')
+                    entry_screen_manager.transition.direction = 'left'
 
 
 
@@ -99,7 +235,7 @@
         opening_time: 0.5
         closing_time: 0.4
         enable_swiping: True
-        type: "standard"
+        drawer_type: "modal"
         status: "opening_with_swipe"
         BoxLayout:
             orientation: 'vertical'

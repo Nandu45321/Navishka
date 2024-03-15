@@ -14,14 +14,14 @@ class CuboidScreenView(Screen):
             length_input = float(length_input)
             breadth_input = float(breadth_input)
             height_input = float(height_input)
-            self.ids.volume_value.hint_text = str(round(length_input * breadth_input * height_input, 4))
-            self.ids.tsa_value.hint_text = str(round(
+            self.ids.volume_value.text = str(round(length_input * breadth_input * height_input, 4))
+            self.ids.tsa_value.text = str(round(
                 2 * ((length_input * breadth_input) + (breadth_input * height_input) + (length_input * height_input)),
                 4))
-            self.ids.diagonal_value.hint_text = str(
+            self.ids.diagonal_value.text = str(
                 round(math.sqrt((length_input ** 2) + (breadth_input ** 2) + (height_input ** 2)), 4))
         else:
-            self.ids.volume_value.hint_text = ''
-            self.ids.tsa_value.hint_text = ''
-            self.ids.diagonal_value.hint_text = ''
+            self.ids.volume_value.text = ''
+            self.ids.tsa_value.text = ''
+            self.ids.diagonal_value.text = ''
             MDSnackbar(text="[color=#ff6961]Please fill the all the required blanks[/color]", ).open()
