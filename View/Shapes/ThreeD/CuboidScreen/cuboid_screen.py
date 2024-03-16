@@ -24,4 +24,4 @@ class CuboidScreenView(Screen):
             self.ids.volume_value.text = ''
             self.ids.tsa_value.text = ''
             self.ids.diagonal_value.text = ''
-            MDSnackbar(text="[color=#ff6961]Please fill the all the required blanks[/color]", ).open()
+            MDSnackbar(text="[color=#ff6961]Please fill all the required blanks[/color]", ).open()

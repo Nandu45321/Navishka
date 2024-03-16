@@ -13,4 +13,4 @@ class SemiCircleScreenView(Screen):
         else:
             self.ids.area_value.text = ''
             self.ids.circumference_value.text = ''
-            MDSnackbar(text="[color=#ff6961]Please fill the all the required blanks[/color]", ).open()
+            MDSnackbar(text="[color=#ff6961]Please fill all the required blanks[/color]", ).open()

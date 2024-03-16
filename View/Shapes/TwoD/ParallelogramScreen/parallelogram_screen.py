@@ -21,7 +21,7 @@ class ParallelogramScreenView(Screen):
                 self.ids.perimeter_value.text = ''
                 self.ids.diagonal_1.text = ''
                 self.ids.diagonal_2.text = ''
-                MDSnackbar(text="[color=#ff6961]Please fill the all the blanks for diagonals[/color]", ).open()
+                MDSnackbar(text="[color=#ff6961]Please fill all the blanks for diagonals[/color]", ).open()
         else:
             self.ids.area_value.text = ''
-            MDSnackbar(text="[color=#ff6961]Please fill the all the required blanks[/color]", ).open()
+            MDSnackbar(text="[color=#ff6961]Please fill all the required blanks[/color]", ).open()

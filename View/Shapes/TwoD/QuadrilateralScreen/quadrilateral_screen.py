@@ -20,7 +20,7 @@ class QuadrilateralScreenView(Screen):
             self.ids.area_value.text = ''
             MDSnackbar(
                 MDSnackbarText(
-                    text="Please fill the all the required blanks",
+                    text="Please fill all the required blanks",
                 ),
                 y=dp(24),
                 pos_hint={"center_x": 0.5},
