@@ -7,19 +7,19 @@ from kivymd.uix.snackbar import MDSnackbar
 class CuboidScreenView(Screen):
 
     def queans(self):
-        length_input = self.ids.length_value.text
-        breadth_input = self.ids.breadth_value.text
-        height_input = self.ids.height_value.text
-        if length_input != '' and breadth_input != '' and height_input != '':
-            length_input = float(length_input)
-            breadth_input = float(breadth_input)
-            height_input = float(height_input)
-            self.ids.volume_value.text = str(round(length_input * breadth_input * height_input, 4))
+        length = self.ids.length_value.text
+        breadth = self.ids.breadth_value.text
+        height = self.ids.height_value.text
+        if length != '' and breadth != '' and height != '':
+            length = float(length)
+            breadth = float(breadth)
+            height = float(height)
+            self.ids.volume_value.text = str(round(length * breadth * height, 4))
             self.ids.tsa_value.text = str(round(
-                2 * ((length_input * breadth_input) + (breadth_input * height_input) + (length_input * height_input)),
+                2 * ((length * breadth) + (breadth * height) + (length * height)),
                 4))
             self.ids.diagonal_value.text = str(
-                round(math.sqrt((length_input ** 2) + (breadth_input ** 2) + (height_input ** 2)), 4))
+                round(math.sqrt((length ** 2) + (breadth ** 2) + (height ** 2)), 4))
         else:
             self.ids.volume_value.text = ''
             self.ids.tsa_value.text = ''

@@ -18,7 +18,7 @@ class TrapeziumScreenView(Screen):
             height = float(height)
 
             area = (1 / 2) * (parallel_side_1 + parallel_side_2) * height
-            self.ids.area_value.text = str(round(area))
+            self.ids.area_value.text = str(round(area, 3))
 
             if side_1 != '' and side_2 != '':
 
@@ -26,7 +26,7 @@ class TrapeziumScreenView(Screen):
                 side_2 = float(side_2)
 
                 perimeter = parallel_side_1 + parallel_side_2 + side_1 + side_2
-                self.ids.perimeter_value.text = str(round(perimeter))
+                self.ids.perimeter_value.text = str(round(perimeter, 3))
             else:
                 self.ids.perimeter_value.text = ''
                 MDSnackbar(

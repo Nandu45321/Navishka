@@ -4,10 +4,10 @@ from kivymd.uix.snackbar import MDSnackbar
 
 class RegularNonagonScreenView(Screen):
     def queans(self):
-        side_input = self.ids.side_value.text
-        if side_input != '':
-            self.ids.area_value.text = str("{:.3f}".format((9 / 4) * (float(side_input) ** 2) * 2.74747741945462))
-            self.ids.perimeter_value.text = str("{:.3f}".format(9 * float(side_input)))
+        side = self.ids.side_value.text
+        if side != '':
+            self.ids.area_value.text = str("{:.3f}".format((9 / 4) * (float(side) ** 2) * 2.74747741945462))
+            self.ids.perimeter_value.text = str("{:.3f}".format(9 * float(side)))
         else:
             self.ids.area_value.text = ''
             self.ids.perimeter_value.text = ''

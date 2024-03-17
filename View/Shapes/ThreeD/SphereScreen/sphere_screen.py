@@ -149,10 +149,10 @@ class ThreeD(GridLayout):
 class SphereScreenView(Screen):
 
     def queans(self):
-        radius_input = self.ids.radius_value.text
-        if radius_input != '':
-            self.ids.volume_value.text = str(round((4 / 3) * 3.141592653589793238 * (float(radius_input) ** 3), 4))
-            self.ids.tsa_value.text = str(round(4 * 3.141592653589793238 * (float(radius_input) ** 2), 4))
+        radius = self.ids.radius_value.text
+        if radius != '':
+            self.ids.volume_value.text = str(round((4 / 3) * 3.141592653589793238 * (float(radius) ** 3), 4))
+            self.ids.tsa_value.text = str(round(4 * 3.141592653589793238 * (float(radius) ** 2), 4))
         else:
             self.ids.volume_value.text = ''
             self.ids.tsa_value.text = ''

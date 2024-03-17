@@ -20,10 +20,10 @@ class ParallelogramScreenView(Screen):
             diagonal_2 = (side ** 2 + height ** 2 - 2 * height * side * (
                     (side ** 2 - height ** 2) ** (1 / 2) / side)) ** (1 / 2)
 
-            self.ids.area_value.text = str(round(area))
-            self.ids.perimeter_value.text = str(round(perimeter))
-            self.ids.diagonal_1.text = str(round(diagonal_1))
-            self.ids.diagonal_2.text = str(round(diagonal_2))
+            self.ids.area_value.text = str(round(area, 3))
+            self.ids.perimeter_value.text = str(round(perimeter, 3))
+            self.ids.diagonal_1.text = str(round(diagonal_1, 3))
+            self.ids.diagonal_2.text = str(round(diagonal_2, 3))
         else:
             self.ids.area_value.text = ''
             self.ids.perimeter_value.text = ''
