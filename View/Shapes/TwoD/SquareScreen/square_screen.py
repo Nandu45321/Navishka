@@ -1,16 +1,30 @@
+from kivy.metrics import dp
 from kivy.uix.screenmanager import Screen
-from kivymd.uix.snackbar import MDSnackbar
+from kivymd.uix.snackbar import MDSnackbar, MDSnackbarText
 
 
 class SquareScreenView(Screen):
     def queans(self):
         side = self.ids.side_value.text
         if side != '':
-            self.ids.area_value.text = str("{:.3f}".format(float(side) ** 2))
-            self.ids.perimeter_value.text = str("{:.3f}".format(4 * float(side)))
-            self.ids.diagonal_value.text = str("{:.3f}".format(float(side) * 2 ** (1 / 2)))
+            side = float(side)
+
+            area = side * side
+            perimeter = 4 * side
+            diagonal = side * 2 ** (1 / 2)
+
+            self.ids.area_value.text = str(round(area, 3))
+            self.ids.perimeter_value.text = str(round(perimeter, 3))
+            self.ids.diagonal_value.text = str(round(diagonal, 3))
         else:
             self.ids.area_value.text = ''
             self.ids.perimeter_value.text = ''
             self.ids.diagonal_value.text = ''
-            MDSnackbar(text="[color=#ff6961]Please fill all the required blanks[/color]", ).open()
+            MDSnackbar(
+                MDSnackbarText(
+                    text="Please fill all the required blanks",
+                ),
+                y=dp(24),
+                pos_hint={"center_x": 0.5},
+                size_hint_x=0.95,
+            ).open()
