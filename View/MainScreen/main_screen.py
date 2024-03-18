@@ -1,3 +1,4 @@
+import sys
 from kivy.properties import StringProperty
 from kivy.uix.screenmanager import Screen
 from kivymd.uix.card import MDCard
@@ -10,7 +11,10 @@ class SmallCard(MDCard):
     inputs = StringProperty("None")
     outputs = StringProperty("None")
     imagepath = StringProperty("None")
-    constant = 2.65
+    if hasattr(sys, 'getandroidapilevel'):
+        constant = 2.65
+    else:
+        constant = 1
     medium = 425 / constant
     large = 478 / constant
     # 2.65
