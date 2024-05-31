@@ -28,7 +28,7 @@ from View.screens import screens
 if hasattr(sys, 'getandroidapilevel'):
     pass
 else:
-    Window.size = (324, 710)
+    Window.size = (380, 840)
 
 
 class NavishkaApp(MDApp):
