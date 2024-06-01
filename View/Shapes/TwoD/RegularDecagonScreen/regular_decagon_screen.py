@@ -1,15 +1,25 @@
+from kivy.metrics import dp
 from kivy.uix.screenmanager import Screen
-from kivymd.uix.snackbar import MDSnackbar
+from kivymd.uix.snackbar import MDSnackbar, MDSnackbarText
 
 
 class RegularDecagonScreenView(Screen):
     def queans(self):
         side = self.ids.side_value.text
         if side != '':
-            self.ids.area_value.text = str(
-                "{:.3f}".format((5 / 2) * (float(side) ** 2) * (5 + 2 * (5 ** (1 / 2))) ** (1 / 2)))
-            self.ids.perimeter_value.text = str("{:.3f}".format(10 * float(side)))
+            side = float(side)
+            area = (5 / 2) * (side ** 2) * (5 + 2 * (5 ** (1 / 2))) ** (1 / 2)
+            perimeter = 10 * side
+            self.ids.area_value.text = str(round(area, 3))
+            self.ids.perimeter_value.text = str(round(perimeter, 3))
         else:
             self.ids.area_value.text = ''
             self.ids.perimeter_value.text = ''
-            MDSnackbar(text="[color=#ff6961]Please fill all the required blanks[/color]", ).open()
+            MDSnackbar(
+                MDSnackbarText(
+                    text="Please fill all the required blanks",
+                ),
+                y=dp(24),
+                pos_hint={"center_x": 0.5},
+                size_hint_x=0.95,
+            ).open()
