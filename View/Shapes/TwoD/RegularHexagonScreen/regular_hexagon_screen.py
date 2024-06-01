@@ -1,11 +1,12 @@
 from kivy.clock import Clock
+from kivy.metrics import dp
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import Screen
 from kivy3 import Mesh, Material
 from kivy3 import PerspectiveCamera
 from kivy3 import Renderer, Scene
 from kivy3.extras.geometries import BoxGeometry
-from kivymd.uix.snackbar import MDSnackbar
+from kivymd.uix.snackbar import MDSnackbar, MDSnackbarText
 
 
 class TD(BoxLayout):
@@ -57,9 +58,19 @@ class RegularHexagonScreenView(Screen):
     def queans(self):
         side = self.ids.side_value.text
         if side != '':
-            self.ids.area_value.text = str("{:.3f}".format(((3 * (3 ** (1 / 2))) / 2) * (float(side) ** 2)))
-            self.ids.perimeter_value.text = str("{:.3f}".format(6 * float(side)))
+            side = float(side)
+            area = ((3 * (3 ** (1 / 2))) / 2) * (side ** 2)
+            perimeter = 6 * side
+            self.ids.area_value.text = str(round(area, 3))
+            self.ids.perimeter_value.text = str(round(perimeter, 3))
         else:
             self.ids.area_value.text = ''
             self.ids.perimeter_value.text = ''
-            MDSnackbar(text="[color=#ff6961]Please fill all the required blanks[/color]", ).open()
+            MDSnackbar(
+                MDSnackbarText(
+                    text="Please fill all the required blanks",
+                ),
+                y=dp(24),
+                pos_hint={"center_x": 0.5},
+                size_hint_x=0.95,
+            ).open()

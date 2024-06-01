@@ -13,12 +13,12 @@
                 pos_hint: {"center_x": 0.5}
         ScrollView:
             do_scroll_x: False
+            md_bg_color: 'red'
             StackLayout:
                 size_hint_y: None
                 height:self.minimum_height
-                Label:
-                    size_hint: 1, None
-                    height: dp(10)
+                spacing: '7dp'
+                padding: '7dp'
                 Label:
                     text: 'Side  :'
                     size_hint: 0.5, None
