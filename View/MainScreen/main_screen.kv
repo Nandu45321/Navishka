@@ -1,5 +1,4 @@
 #: import gch kivy.utils.get_color_from_hex
-#: import random random.choice
 
 <SmallCard>:
     id: customcard
@@ -179,13 +178,13 @@
                 SmallCard:                                               # 2
                     shape: 'Circle'
                     inputs: 'Radius'
-                    outputs: 'Area, Circmference'
+                    outputs: 'Area, Circumference'
                     height: self.medium
                     on_release: app.set_current_screen("circle screen")
                 SmallCard:                                               # 2
                     shape: 'Ellipse'
                     inputs: 'X, Y'
-                    outputs: 'Area, Circmference'
+                    outputs: 'Area, Circumference'
                     on_release: app.set_current_screen("ellipse screen")
 
 
@@ -353,7 +352,7 @@
                 #SmallCard:                                               # 2
                  #   shape: 'Ellipse'
                   #  inputs: 'X, Y'
-                   # outputs: 'Area, Circmference'
+                   # outputs: 'Area, Circumference'
                     #height: self.medium
                     #on_release: app.set_current_screen("ellipse screen")
                 #SmallCard:                                               # 3
@@ -395,7 +394,7 @@
 
         MDNavigationBar:
             id: NavBar
-            DNavigationItem
+            DNavigationItem:
                 icon: 'square-outline'
                 text: '2D'
                 active: True
@@ -404,7 +403,7 @@
                     entry_screen_manager.transition.direction = 'right'
 
 
-            DNavigationItem
+            DNavigationItem:
                 icon: 'cube'
                 text: '3D'
                 on_release:
