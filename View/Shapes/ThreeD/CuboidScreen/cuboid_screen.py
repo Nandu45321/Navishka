@@ -1,7 +1,8 @@
 import math
 
+from kivy.metrics import dp
 from kivy.uix.screenmanager import Screen
-from kivymd.uix.snackbar import MDSnackbar
+from kivymd.uix.snackbar import MDSnackbar, MDSnackbarText
 
 
 class CuboidScreenView(Screen):
@@ -24,4 +25,11 @@ class CuboidScreenView(Screen):
             self.ids.volume_value.text = ''
             self.ids.tsa_value.text = ''
             self.ids.diagonal_value.text = ''
-            MDSnackbar(text="[color=#ff6961]Please fill all the required blanks[/color]", ).open()
+            MDSnackbar(
+                MDSnackbarText(
+                    text="Please fill all the required blanks",
+                ),
+                y=dp(24),
+                pos_hint={"center_x": 0.5},
+                size_hint_x=0.95,
+            ).open()

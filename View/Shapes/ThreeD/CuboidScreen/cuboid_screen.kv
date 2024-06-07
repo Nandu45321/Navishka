@@ -1,23 +1,28 @@
 <CuboidScreenView>:
     name: "cuboid screen"
-    BoxLayout:
+    MDBoxLayout:
         orientation: 'vertical'
         MDTopAppBar:
-            title: "Cuboid"
-            pos_hint: {'top': 1}
-            left_action_items: [['arrow-left', lambda x: app.set_current_screen("main screen")]]
+            type: 'small'
+            MDTopAppBarLeadingButtonContainer:
+                MDActionTopAppBarButton:
+                    icon: 'arrow-left'
+                    on_release: app.set_current_screen('main screen')
+            MDTopAppBarTitle:
+                text: "Cuboid"
+                pos_hint: { "center_x": 0.5 }
         ScrollView:
             do_scroll_x: False
+            md_bg_color: 'red'
             StackLayout:
                 size_hint_y: None
-                height:self.minimum_height
-                Label:
-                    size_hint: 1, None
-                    height: dp(5)
+                height: self.minimum_height
+                spacing: '7dp'
+                padding: '7dp'
                 Label:
                     text: 'Length  :'
                     size_hint: 0.5, None
-                    height:dp(60)
+                    height: dp(60)
                     halign: "center"
                     font_size: '16sp'
                 MDTextField:
@@ -32,7 +37,7 @@
                 Label:
                     text: 'Breadth  :'
                     size_hint: 0.5, None
-                    height:dp(60)
+                    height: dp(60)
                     halign: "center"
                     font_size: '16sp'
                 MDTextField:
@@ -47,7 +52,7 @@
                 Label:
                     text: 'Height  :'
                     size_hint: 0.5, None
-                    height:dp(60)
+                    height: dp(60)
                     halign: "center"
                     font_size: '16sp'
                 MDTextField:
@@ -75,7 +80,7 @@
                 Label:
                     text: 'Volume  :'
                     size_hint: 0.5, None
-                    height:dp(60)
+                    height: dp(60)
                     halign: "center"
                     font_size: '16sp'
                 MDTextField:
@@ -87,7 +92,7 @@
                 Label:
                     text: 'T. S. A.  :'
                     size_hint: 0.5, None
-                    height:dp(60)
+                    height: dp(60)
                     halign: "center"
                     font_size: '16sp'
                 MDTextField:
@@ -99,7 +104,7 @@
                 Label:
                     text: 'Diagonal  :'
                     size_hint: 0.5, None
-                    height:dp(60)
+                    height: dp(60)
                     halign: "center"
                     font_size: '16sp'
                 MDTextField:

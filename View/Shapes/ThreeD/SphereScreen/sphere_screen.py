@@ -9,7 +9,8 @@ from kivy3 import Mesh, Material
 from kivy3 import PerspectiveCamera
 from kivy3 import Renderer, Scene
 from kivy3.extras.geometries import BoxGeometry
-from kivymd.uix.snackbar import MDSnackbar
+from kivymd.uix.snackbar import MDSnackbar, MDSnackbarText
+from kivy.metrics import dp
 
 
 class ThreeD(GridLayout):
@@ -151,9 +152,19 @@ class SphereScreenView(Screen):
     def queans(self):
         radius = self.ids.radius_value.text
         if radius != '':
-            self.ids.volume_value.text = str(round((4 / 3) * 3.141592653589793238 * (float(radius) ** 3), 4))
-            self.ids.tsa_value.text = str(round(4 * 3.141592653589793238 * (float(radius) ** 2), 4))
+            radius = float(radius)
+            volume = (4 / 3) * 3.141592653589793238 * (radius ** 3)
+            tsa = 4 * 3.141592653589793238 * (radius ** 2)
+            self.ids.volume_value.text = str(round(volume, 4))
+            self.ids.tsa_value.text = str(round(tsa, 4))
         else:
             self.ids.volume_value.text = ''
             self.ids.tsa_value.text = ''
-            MDSnackbar(text="[color=#ff6961]Please fill all the required blanks[/color]", ).open()
+            MDSnackbar(
+                MDSnackbarText(
+                    text="Please fill all the required blanks",
+                ),
+                y=dp(24),
+                pos_hint={"center_x": 0.5},
+                size_hint_x=0.95,
+            ).open()

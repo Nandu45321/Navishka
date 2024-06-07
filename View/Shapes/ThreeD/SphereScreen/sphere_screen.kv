@@ -1,20 +1,25 @@
-<ThreeD>:
+# <ThreeD>:
 <SphereScreenView>:
     name: "sphere screen"
-    BoxLayout:
+    MDBoxLayout:
         orientation: 'vertical'
         MDTopAppBar:
-            title: "Sphere (unchanged)"
-            pos_hint: {'top': 1}
-            left_action_items: [['arrow-left', lambda x: app.set_current_screen("main screen")]]
+            type: 'small'
+            MDTopAppBarLeadingButtonContainer:
+                MDActionTopAppBarButton:
+                    icon: 'arrow-left'
+                    on_release: app.set_current_screen('main screen')
+            MDTopAppBarTitle:
+                text: "Sphere"
+                pos_hint: { "center_x": 0.5 }
         ScrollView:
             do_scroll_x: False
+            md_bg_color: 'red'
             StackLayout:
                 size_hint_y: None
-                height:self.minimum_height
-                Label:
-                    size_hint: 1, None
-                    height: dp(5)
+                height: self.minimum_height
+                spacing: '7dp'
+                padding: '7dp'
                 Label:
                     text: 'Radius  :'
                     size_hint: 0.5, None
@@ -67,5 +72,5 @@
                     color_mode: "accent"
                     halign: "auto"
                     disabled: True
-                ThreeD:
-                    size_hint: 1, 0.5
+                # ThreeD:
+                   # size_hint: 1, 0.5
