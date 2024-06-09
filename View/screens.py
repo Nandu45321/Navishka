@@ -22,6 +22,7 @@ from View.Shapes.TwoD.SemiCircleScreen.semi_circle_screen import SemiCircleScree
 from View.Shapes.TwoD.SquareScreen.square_screen import SquareScreenView
 from View.Shapes.TwoD.TrapeziumScreen.trapezium_screen import TrapeziumScreenView
 from View.Shapes.TwoD.TriangleScreen.triangle_screen import TriangleScreenView
+from View.Shapes.ThreeD.TriangularPrismScreen.triangular_prism_screen import TriangularPrismScreenView
 
 screens = {
     "main screen": {"view": MainScreenView, "kv": "View/MainScreen/main_screen.kv"},
@@ -59,5 +60,7 @@ screens = {
     "ellipse screen": {"view": EllipseScreenView, "kv": "View/Shapes/TwoD/EllipseScreen/ellipse_screen.kv"},
     "sphere screen": {"view": SphereScreenView, "kv": "View/Shapes/ThreeD/SphereScreen/sphere_screen.kv"},
     "cube screen": {"view": CubeScreenView, "kv": "View/Shapes/ThreeD/CubeScreen/cube_screen.kv"},
-    "cuboid screen": {"view": CuboidScreenView, "kv": "View/Shapes/ThreeD/CuboidScreen/cuboid_screen.kv"}
+    "cuboid screen": {"view": CuboidScreenView, "kv": "View/Shapes/ThreeD/CuboidScreen/cuboid_screen.kv"},
+    "triangular prism screen": {"view": TriangularPrismScreenView,
+                                "kv": "View/Shapes/ThreeD/TriangularPrismScreen/triangular_prism_screen.kv"},
 }

@@ -12,7 +12,7 @@ from kivy3.extras.geometries import BoxGeometry
 from kivymd.uix.snackbar import MDSnackbar, MDSnackbarText
 from kivy.metrics import dp
 
-
+'''
 class ThreeD(GridLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -144,7 +144,7 @@ class ThreeD(GridLayout):
             anim = Animation(x=factor)
             anim &= Animation(y=factor)
             anim &= Animation(z=factor)
-            anim.start(cube.scale)
+            anim.start(cube.scale)'''
 
 
 class SphereScreenView(Screen):
