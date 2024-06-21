@@ -3,15 +3,15 @@ from kivy.uix.screenmanager import Screen
 from kivymd.uix.snackbar import MDSnackbar, MDSnackbarText
 
 
-class IcosahedronScreenView(Screen):
+class DodecahedronScreenView(Screen):
 
     def queans(self):
         side = self.ids.side_value.text
         if side != '':
             side = float(side)
 
-            volume = ((5 * (3 + (5 ** (1 / 2)))) / 12) * (side * side * side)
-            tsa = 5 * (3 ** (1 / 2)) * (side * side)
+            volume = ((15 + 7 * (5 ** (1 / 2))) / 4) * (side * side * side)
+            tsa = 3 * ((25 + 10 * (5 ** (1 / 2))) ** (1 / 2)) * side * side
 
             self.ids.volume_value.text = str(round(volume, 4))
             self.ids.tsa_value.text = str(round(tsa, 4))

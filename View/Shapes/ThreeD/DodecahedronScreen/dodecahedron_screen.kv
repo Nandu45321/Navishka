@@ -1,5 +1,5 @@
-<TetrahedronScreenView>:
-    name: "tetrahedron screen"
+<DodecahedronScreenView>:
+    name: "dodecahedron screen"
     MDBoxLayout:
         orientation: 'vertical'
         MDTopAppBar:
@@ -9,7 +9,7 @@
                     icon: 'arrow-left'
                     on_release: app.set_current_screen('main screen')
             MDTopAppBarTitle:
-                text: "Tetrahedron"
+                text: "Dodecahedron"
                 pos_hint: {"center_x": 0.5}
         ScrollView:
             do_scroll_x: False
@@ -67,30 +67,6 @@
                     font_size: '16sp'
                 MDTextField:
                     id: tsa_value
-                    size_hint: 0.5, None
-                    color_mode: "accent"
-                    halign: "auto"
-                    disabled: True
-                Label:
-                    text: 'Face Area  :'
-                    size_hint: 0.5, None
-                    height: dp(60)
-                    halign: "center"
-                    font_size: '16sp'
-                MDTextField:
-                    id: ar_face_value
-                    size_hint: 0.5, None
-                    color_mode: "accent"
-                    halign: "auto"
-                    disabled: True
-                Label:
-                    text: 'Height  :'
-                    size_hint: 0.5, None
-                    height: dp(60)
-                    halign: "center"
-                    font_size: '16sp'
-                MDTextField:
-                    id: height_value
                     size_hint: 0.5, None
                     color_mode: "accent"
                     halign: "auto"

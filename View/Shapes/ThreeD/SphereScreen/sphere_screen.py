@@ -11,6 +11,7 @@ from kivy3 import Renderer, Scene
 from kivy3.extras.geometries import BoxGeometry
 from kivymd.uix.snackbar import MDSnackbar, MDSnackbarText
 from kivy.metrics import dp
+import math
 
 '''
 class ThreeD(GridLayout):
@@ -153,8 +154,8 @@ class SphereScreenView(Screen):
         radius = self.ids.radius_value.text
         if radius != '':
             radius = float(radius)
-            volume = (4 / 3) * 3.141592653589793238 * (radius ** 3)
-            tsa = 4 * 3.141592653589793238 * (radius ** 2)
+            volume = (4 / 3) * math.pi * (radius ** 3)
+            tsa = 4 * math.pi * (radius ** 2)
             self.ids.volume_value.text = str(round(volume, 4))
             self.ids.tsa_value.text = str(round(tsa, 4))
         else:

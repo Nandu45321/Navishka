@@ -1,5 +1,5 @@
-<TetrahedronScreenView>:
-    name: "tetrahedron screen"
+<ConeScreenView>:
+    name: "cone screen"
     MDBoxLayout:
         orientation: 'vertical'
         MDTopAppBar:
@@ -9,8 +9,8 @@
                     icon: 'arrow-left'
                     on_release: app.set_current_screen('main screen')
             MDTopAppBarTitle:
-                text: "Tetrahedron"
-                pos_hint: {"center_x": 0.5}
+                text: "Cone"
+                pos_hint: { "center_x": 0.5 }
         ScrollView:
             do_scroll_x: False
             md_bg_color: 'red'
@@ -20,13 +20,29 @@
                 spacing: '7dp'
                 padding: '7dp'
                 Label:
-                    text: 'Side  :'
+                    text: 'Radius  :'
                     size_hint: 0.5, None
                     height: dp(60)
                     halign: "center"
                     font_size: '16sp'
                 MDTextField:
-                    id: side_value
+                    id: radius_value
+                    size_hint: 0.5, None
+                    color_mode: "accent"
+                    halign: "auto"
+                    multiline: False
+                    input_type: "number"
+                    input_filter: "float"
+                    on_text_validate: root.queans()
+
+                Label:
+                    text: 'Height  :'
+                    size_hint: 0.5, None
+                    height: dp(60)
+                    halign: "center"
+                    font_size: '16sp'
+                MDTextField:
+                    id: height_value
                     size_hint: 0.5, None
                     color_mode: "accent"
                     halign: "auto"
@@ -72,25 +88,37 @@
                     halign: "auto"
                     disabled: True
                 Label:
-                    text: 'Face Area  :'
+                    text: 'C. S. A.  :'
                     size_hint: 0.5, None
                     height: dp(60)
                     halign: "center"
                     font_size: '16sp'
                 MDTextField:
-                    id: ar_face_value
+                    id: csa_value
                     size_hint: 0.5, None
                     color_mode: "accent"
                     halign: "auto"
                     disabled: True
                 Label:
-                    text: 'Height  :'
+                    text: 'Base Area  :'
                     size_hint: 0.5, None
                     height: dp(60)
                     halign: "center"
                     font_size: '16sp'
                 MDTextField:
-                    id: height_value
+                    id: ar_base_value
+                    size_hint: 0.5, None
+                    color_mode: "accent"
+                    halign: "auto"
+                    disabled: True
+                Label:
+                    text: 'Slant Height  :'
+                    size_hint: 0.5, None
+                    height: dp(60)
+                    halign: "center"
+                    font_size: '16sp'
+                MDTextField:
+                    id: sl_height_value
                     size_hint: 0.5, None
                     color_mode: "accent"
                     halign: "auto"

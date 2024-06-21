@@ -1,0 +1,73 @@
+<OctahedronScreenView>:
+    name: "octahedron screen"
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            type: 'small'
+            MDTopAppBarLeadingButtonContainer:
+                MDActionTopAppBarButton:
+                    icon: 'arrow-left'
+                    on_release: app.set_current_screen('main screen')
+            MDTopAppBarTitle:
+                text: "Octahedron"
+                pos_hint: {"center_x": 0.5}
+        ScrollView:
+            do_scroll_x: False
+            md_bg_color: 'red'
+            StackLayout:
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: '7dp'
+                padding: '7dp'
+                Label:
+                    text: 'Side  :'
+                    size_hint: 0.5, None
+                    height: dp(60)
+                    halign: "center"
+                    font_size: '16sp'
+                MDTextField:
+                    id: side_value
+                    size_hint: 0.5, None
+                    color_mode: "accent"
+                    halign: "auto"
+                    multiline: False
+                    input_type: "number"
+                    input_filter: "float"
+                    on_text_validate: root.queans()
+
+                MDDivider:
+
+                MDIconButton:
+                    text: " "
+                    icon: 'arrow-down'
+                    pos_hint: 0,0
+                    size_hint: 1, None
+                    height: dp(60)
+                    pos_hint: {'center_x': 1}
+                    radius: 0, 0, 0, 0
+                    on_release: root.queans()
+                MDDivider:
+                Label:
+                    text: 'Volume  :'
+                    size_hint: 0.5, None
+                    height: dp(60)
+                    halign: "center"
+                    font_size: '16sp'
+                MDTextField:
+                    id: volume_value
+                    size_hint: 0.5, None
+                    color_mode: "accent"
+                    halign: "auto"
+                    disabled: True
+                Label:
+                    text: 'T. S. A.  :'
+                    size_hint: 0.5, None
+                    height: dp(60)
+                    halign: "center"
+                    font_size: '16sp'
+                MDTextField:
+                    id: tsa_value
+                    size_hint: 0.5, None
+                    color_mode: "accent"
+                    halign: "auto"
+                    disabled: True

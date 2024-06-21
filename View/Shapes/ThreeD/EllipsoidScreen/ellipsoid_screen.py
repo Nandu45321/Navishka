@@ -1,17 +1,23 @@
+import math
+
 from kivy.metrics import dp
 from kivy.uix.screenmanager import Screen
 from kivymd.uix.snackbar import MDSnackbar, MDSnackbarText
 
 
-class IcosahedronScreenView(Screen):
+class EllipsoidScreenView(Screen):
 
     def queans(self):
-        side = self.ids.side_value.text
-        if side != '':
-            side = float(side)
+        x = self.ids.x_value.text
+        y = self.ids.y_value.text
+        z = self.ids.z_value.text
+        if x != '' and y != '' and z != '':
+            x = float(x)
+            y = float(y)
+            z = float(z)
 
-            volume = ((5 * (3 + (5 ** (1 / 2)))) / 12) * (side * side * side)
-            tsa = 5 * (3 ** (1 / 2)) * (side * side)
+            volume = (4 / 3) * math.pi * x * y * z
+            tsa = 4 * math.pi * ((((x * y) ** 1.6075) + ((x * z) ** 1.6075) + ((y * z) ** 1.6075)) / 3) ** (1 / 1.6075)
 
             self.ids.volume_value.text = str(round(volume, 4))
             self.ids.tsa_value.text = str(round(tsa, 4))

@@ -1,3 +1,4 @@
+import View.Shapes.ThreeD.OctahedronScreen.octahedron_screen
 from View.MainScreen.main_screen import MainScreenView
 from View.Shapes.ThreeD.CubeScreen.cube_screen import CubeScreenView
 from View.Shapes.ThreeD.CuboidScreen.cuboid_screen import CuboidScreenView
@@ -27,6 +28,16 @@ from View.Shapes.ThreeD.TriangularPyramidScreen.triangular_pyramid_screen import
 from View.Shapes.ThreeD.SquarePyramidScreen.square_pyramid_screen import SquarePyramidScreenView
 from View.Shapes.ThreeD.RectangularPyramidScreen.rectangular_pyramid_screen import RectangularPyramidScreenView
 from View.Shapes.ThreeD.PentagonalPyramidScreen.pentagonal_pyramid_screen import PentagonalPyramidScreenView
+from View.Shapes.ThreeD.HexagonalPyramidScreen.hexagonal_pyramid_screen import HexagonalPyramidScreenView
+from View.Shapes.ThreeD.TetrahedronScreen.tetrahedron_screen import TetrahedronScreenView
+from View.Shapes.ThreeD.OctahedronScreen.octahedron_screen import OctahedronScreenView
+from View.Shapes.ThreeD.IcosahedronScreen.icosahedron_screen import IcosahedronScreenView
+from View.Shapes.ThreeD.DodecahedronScreen.dodecahedron_screen import DodecahedronScreenView
+from View.Shapes.ThreeD.HemiSphereScreen.hemi_sphere_screen import HemiSphereScreenView
+from View.Shapes.ThreeD.EllipsoidScreen.ellipsoid_screen import EllipsoidScreenView
+from View.Shapes.ThreeD.ConeScreen.cone_screen import ConeScreenView
+from View.Shapes.ThreeD.CylinderScreen.cylinder_screen import CylinderScreenView
+from View.Shapes.ThreeD.TorusScreen.torus_screen import TorusScreenView
 
 screens = {
     "main screen": {"view": MainScreenView, "kv": "View/MainScreen/main_screen.kv"},
@@ -75,4 +86,21 @@ screens = {
                                    "kv": "View/Shapes/ThreeD/RectangularPyramidScreen/rectangular_pyramid_screen.kv"},
     "pentagonal pyramid screen": {"view": PentagonalPyramidScreenView,
                                   "kv": "View/Shapes/ThreeD/PentagonalPyramidScreen/pentagonal_pyramid_screen.kv"},
+    "hexagonal pyramid screen": {"view": HexagonalPyramidScreenView,
+                                 "kv": "View/Shapes/ThreeD/HexagonalPyramidScreen/hexagonal_pyramid_screen.kv"},
+    "tetrahedron screen": {"view": TetrahedronScreenView,
+                           "kv": "View/Shapes/ThreeD/TetrahedronScreen/tetrahedron_screen.kv"},
+    "octahedron screen": {"view": OctahedronScreenView,
+                          "kv": "View/Shapes/ThreeD/OctahedronScreen/octahedron_screen.kv"},
+    "icosahedron screen": {"view": IcosahedronScreenView,
+                           "kv": "View/Shapes/ThreeD/IcosahedronScreen/icosahedron_screen.kv"},
+    "dodecahedron screen": {"view": DodecahedronScreenView,
+                            "kv": "View/Shapes/ThreeD/DodecahedronScreen/dodecahedron_screen.kv"},
+    "hemi sphere screen": {"view": HemiSphereScreenView,
+                           "kv": "View/Shapes/ThreeD/HemiSphereScreen/hemi_sphere_screen.kv"},
+    "ellipsoid screen": {"view": EllipsoidScreenView,
+                         "kv": "View/Shapes/ThreeD/EllipsoidScreen/ellipsoid_screen.kv"},
+    "cone screen": {"view": ConeScreenView, "kv": "View/Shapes/ThreeD/ConeScreen/cone_screen.kv"},
+    "cylinder screen": {"view": CylinderScreenView, "kv": "View/Shapes/ThreeD/CylinderScreen/cylinder_screen.kv"},
+    "torus screen": {"view": TorusScreenView, "kv": "View/Shapes/ThreeD/TorusScreen/torus_screen.kv"}
 }

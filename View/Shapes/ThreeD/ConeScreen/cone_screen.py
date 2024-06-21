@@ -1,35 +1,36 @@
+import math
+
 from kivy.metrics import dp
 from kivy.uix.screenmanager import Screen
 from kivymd.uix.snackbar import MDSnackbar, MDSnackbarText
 
 
-class HexagonalPyramidScreenView(Screen):
+class ConeScreenView(Screen):
 
     def queans(self):
-        side = self.ids.side_value.text
+        radius = self.ids.radius_value.text
         height = self.ids.height_value.text
-        if side != '' and height != '':
-            side = float(side)
+        if radius != '' and height != '':
+            radius = float(radius)
             height = float(height)
 
-            volume = ((3 ** (1 / 2)) / 2) * (side * side) * height
-            tsa = ((3 * (3 ** (1 / 2))) / 2) * (side * side) + (3 * side) * (
-                    (height * height) + ((3 * side * side) / 4)) ** (1 / 2)
-            lsa = (3 * side) * ((height * height) + ((3 * side * side) / 4)) ** (1 / 2)
-            ar_base = ((3 * (3 ** (1 / 2))) / 2) * (side * side)
-            ar_face = (side / 2) * ((height * height) + ((3 * side * side) / 4)) ** (1 / 2)
+            volume = math.pi * radius * radius * (height / 3)
+            tsa = math.pi * radius * (radius + ((height * height) + (radius * radius)) ** (1 / 2))
+            csa = math.pi * radius * (((height * height) + (radius * radius)) ** (1 / 2))
+            ar_base = math.pi * radius * radius
+            sl_height = ((radius * radius) + (height * height)) ** (1 / 2)
 
             self.ids.volume_value.text = str(round(volume, 4))
             self.ids.tsa_value.text = str(round(tsa, 4))
-            self.ids.lsa_value.text = str(round(lsa, 4))
+            self.ids.csa_value.text = str(round(csa, 4))
             self.ids.ar_base_value.text = str(round(ar_base, 4))
-            self.ids.ar_face_value.text = str(round(ar_face, 4))
+            self.ids.sl_height_value.text = str(round(sl_height, 4))
         else:
             self.ids.volume_value.text = ''
             self.ids.tsa_value.text = ''
-            self.ids.lsa_value.text = ''
+            self.ids.csa_value.text = ''
             self.ids.ar_base_value.text = ''
-            self.ids.ar_face_value.text = ''
+            self.ids.sl_height_value.text = ''
             MDSnackbar(
                 MDSnackbarText(
                     text="Please fill all the required blanks",

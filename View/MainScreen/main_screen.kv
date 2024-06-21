@@ -247,14 +247,14 @@
                     inputs: 'Edge'
                     outputs: 'Volume, TSA, Face Area, Height'
                     imagepath: 'Images/tetrahedron.png'
-                    on_release: app.set_current_screen("rhombus screen")
+                    on_release: app.set_current_screen("tetrahedron screen")
                 SmallCard:                                               # 3
                     shape: 'Dodecahedron'
                     inputs: 'Edge'
                     outputs: 'Volume, TSA'
                     height: self.large
                     imagepath: 'Images/dodecahedron.png'
-                    on_release: app.set_current_screen("sphere screen")
+                    on_release: app.set_current_screen("dodecahedron screen")
                 SmallCard:                                               # 2
                     shape: 'Sphere'
                     inputs: 'Radius'
@@ -267,14 +267,14 @@
                     inputs: 'X, Y, Z'
                     outputs: 'Volume, TSA'
                     imagepath: 'Images/ellipsoid1.png'
-                    on_release: app.set_current_screen("regular octagon screen")
+                    on_release: app.set_current_screen("ellipsoid screen")
                 SmallCard:                                               # 3
                     shape: 'Cylinder'
                     inputs: 'Radius, Height'
                     outputs: 'Volume, TSA, LSA, Base Area'
                     height: self.large
                     imagepath: 'Images/cylinder.png'
-                    on_release: app.set_current_screen("regular decagon screen")
+                    on_release: app.set_current_screen("cylinder screen")
                 #SmallCard:                                               # 1
                  #   shape: 'Semi Circle'
                   #  inputs: 'Radius'
@@ -324,41 +324,41 @@
                     outputs: 'Volume, TSA, LSA, Face Area, Base Area'
                     height: self.medium
                     imagepath: 'Images/hexagonalpyramid.png'
-                    on_release: app.set_current_screen("rectangle screen")
+                    on_release: app.set_current_screen("hexagonal pyramid screen")
                 SmallCard:                                               # 3
                     shape: 'Octahedron'
                     inputs: 'Edge'
                     outputs: 'Volume, TSA'
                     height: self.large
                     imagepath: 'Images/octahedron.png'
-                    on_release: app.set_current_screen("square screen")
+                    on_release: app.set_current_screen("octahedron screen")
                 SmallCard:                                               # 2
                     shape: 'Icosahedron'
                     inputs: 'Edge'
                     outputs: 'Volume, TSA'
                     height: self.medium
                     imagepath: 'Images/icosahedron.png'
-                    on_release: app.set_current_screen("regular pentagon screen")
+                    on_release: app.set_current_screen("icosahedron screen")
                 SmallCard:                                               # 1
                     shape: 'Hemi-Sphere'
                     inputs: 'Radius'
-                    outputs: 'Volume, TSA, LSA, Base Area, Diameter, Circumference'
+                    outputs: 'Volume, TSA, LSA, Base Area, Circumference'
                     imagepath: 'Images/hemisphere.png'
-                    on_release: app.set_current_screen("regular heptagon screen")
+                    on_release: app.set_current_screen("hemi sphere screen")
                 SmallCard:                                               # 3
                     shape: 'Cone'
                     inputs: 'Radius, Height'
-                    outputs: 'Volume, TSA, LSA, Base Area, Slant height, Diameter'
+                    outputs: 'Volume, TSA, LSA, Base Area, Slant height'
                     imagepath: 'Images/cone.png'
                     height: self.large
-                    on_release: app.set_current_screen("regular nonagon screen")
+                    on_release: app.set_current_screen("cone screen")
                 SmallCard:                                               # 2
                     shape: 'Torus'
                     inputs: 'Radius1, Radius2'
                     outputs: 'Volume, TSA'
                     height: self.medium
                     imagepath: 'Images/torus.png'
-                    on_release: app.set_current_screen("circle screen")
+                    on_release: app.set_current_screen("torus screen")
                 #SmallCard:                                               # 2
                  #   shape: 'Ellipse'
                   #  inputs: 'X, Y'
