@@ -23,6 +23,8 @@ from View.Shapes.TwoD.SquareScreen.square_screen import SquareScreenView
 from View.Shapes.TwoD.TrapeziumScreen.trapezium_screen import TrapeziumScreenView
 from View.Shapes.TwoD.TriangleScreen.triangle_screen import TriangleScreenView
 from View.Shapes.ThreeD.TriangularPrismScreen.triangular_prism_screen import TriangularPrismScreenView
+from View.Shapes.ThreeD.TriangularPyramidScreen.triangular_pyramid_screen import TriangularPyramidScreenView
+from View.Shapes.ThreeD.SquarePyramidScreen.square_pyramid_screen import SquarePyramidScreenView
 
 screens = {
     "main screen": {"view": MainScreenView, "kv": "View/MainScreen/main_screen.kv"},
@@ -63,4 +65,8 @@ screens = {
     "cuboid screen": {"view": CuboidScreenView, "kv": "View/Shapes/ThreeD/CuboidScreen/cuboid_screen.kv"},
     "triangular prism screen": {"view": TriangularPrismScreenView,
                                 "kv": "View/Shapes/ThreeD/TriangularPrismScreen/triangular_prism_screen.kv"},
+    "triangular pyramid screen": {"view": TriangularPyramidScreenView,
+                                  "kv": "View/Shapes/ThreeD/TriangularPyramidScreen/triangular_pyramid_screen.kv"},
+    "square pyramid screen": {"view": SquarePyramidScreenView,
+                              "kv": "View/Shapes/ThreeD/SquarePyramidScreen/square_pyramid_screen.kv"}
 }
