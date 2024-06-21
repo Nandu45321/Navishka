@@ -1,5 +1,5 @@
-<SquarePyramidScreenView>:
-    name: "square pyramid screen"
+<PentagonalPyramidScreenView>:
+    name: "pentagonal pyramid screen"
     MDBoxLayout:
         orientation: 'vertical'
         MDTopAppBar:
@@ -9,7 +9,7 @@
                     icon: 'arrow-left'
                     on_release: app.set_current_screen('main screen')
             MDTopAppBarTitle:
-                text: "Square Pyramid Screen"
+                text: "Pentagonal Pyramid"
                 pos_hint: {"center_x": 0.5}
         ScrollView:
             do_scroll_x: False
@@ -34,6 +34,7 @@
                     input_type: "number"
                     input_filter: "float"
                     on_text_validate: root.queans()
+
                 Label:
                     text: 'Height  :'
                     size_hint: 0.5, None

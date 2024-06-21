@@ -24,12 +24,12 @@ class RectangularPyramidScreenView(Screen):
             self.ids.volume_value.text = str(round(volume, 4))
             self.ids.tsa_value.text = str(round(tsa, 4))
             self.ids.lsa_value.text = str(round(lsa, 4))
-            self.ids.ar_base.text = str(round(math.sqrt(3) * side, 4))
+            self.ids.ar_base_value.text = str(round(ar_base, 4))
         else:
             self.ids.volume_value.text = ''
             self.ids.tsa_value.text = ''
             self.ids.lsa_value.text = ''
-            self.ids.diagonal_value.text = ''
+            self.ids.ar_base_value.text = ''
             MDSnackbar(
                 MDSnackbarText(
                     text="Please fill all the required blanks",

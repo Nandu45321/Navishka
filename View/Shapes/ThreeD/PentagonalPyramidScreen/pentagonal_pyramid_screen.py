@@ -1,9 +1,11 @@
+import math
+
 from kivy.metrics import dp
 from kivy.uix.screenmanager import Screen
 from kivymd.uix.snackbar import MDSnackbar, MDSnackbarText
 
 
-class SquarePyramidScreenView(Screen):
+class PentagonalPyramidScreenView(Screen):
 
     def queans(self):
         side = self.ids.side_value.text
@@ -12,11 +14,13 @@ class SquarePyramidScreenView(Screen):
             side = float(side)
             height = float(height)
 
-            volume = (side * side) * (height / 3)
-            tsa = (side * side) + (2 * side) * (((side * side) / 4) + (height * height)) ** (1 / 2)
-            lsa = side * ((side * side) + 4 * (height * height)) ** (1 / 2)
-            ar_base = side * side
-            ar_face = (side / 2) * (((side * side) / 4) + (height * height)) ** (1 / 2)
+            s = math.tan(3*math.pi/10)  # tan(3pi/10) = 1.37....
+            volume = (5 / 12) * s * height * (side * side)
+            tsa = (5 / 4) * s * (side * side) + (5 * (side / 2)) * ((height * height) + (((side * s) / 2) ** 2)) ** (
+                        1 / 2)
+            lsa = (5 * side * ((height * height) + (((side * s) / 2) ** 2)) ** (1 / 2)) / 2
+            ar_base = (5 / 4) * s * side * side
+            ar_face = (side / 2) * ((height * height) + (((side * s) / 2) ** 2)) ** (1 / 2)
 
             self.ids.volume_value.text = str(round(volume, 4))
             self.ids.tsa_value.text = str(round(tsa, 4))
@@ -27,8 +31,8 @@ class SquarePyramidScreenView(Screen):
             self.ids.volume_value.text = ''
             self.ids.tsa_value.text = ''
             self.ids.lsa_value.text = ''
-            self.ids.ar_base.text = ''
-            self.ids.ar_face.text = ''
+            self.ids.ar_base_value.text = ''
+            self.ids.ar_face_value.text = ''
             MDSnackbar(
                 MDSnackbarText(
                     text="Please fill all the required blanks",

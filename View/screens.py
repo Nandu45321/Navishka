@@ -25,6 +25,8 @@ from View.Shapes.TwoD.TriangleScreen.triangle_screen import TriangleScreenView
 from View.Shapes.ThreeD.TriangularPrismScreen.triangular_prism_screen import TriangularPrismScreenView
 from View.Shapes.ThreeD.TriangularPyramidScreen.triangular_pyramid_screen import TriangularPyramidScreenView
 from View.Shapes.ThreeD.SquarePyramidScreen.square_pyramid_screen import SquarePyramidScreenView
+from View.Shapes.ThreeD.RectangularPyramidScreen.rectangular_pyramid_screen import RectangularPyramidScreenView
+from View.Shapes.ThreeD.PentagonalPyramidScreen.pentagonal_pyramid_screen import PentagonalPyramidScreenView
 
 screens = {
     "main screen": {"view": MainScreenView, "kv": "View/MainScreen/main_screen.kv"},
@@ -68,5 +70,9 @@ screens = {
     "triangular pyramid screen": {"view": TriangularPyramidScreenView,
                                   "kv": "View/Shapes/ThreeD/TriangularPyramidScreen/triangular_pyramid_screen.kv"},
     "square pyramid screen": {"view": SquarePyramidScreenView,
-                              "kv": "View/Shapes/ThreeD/SquarePyramidScreen/square_pyramid_screen.kv"}
+                              "kv": "View/Shapes/ThreeD/SquarePyramidScreen/square_pyramid_screen.kv"},
+    "rectangular pyramid screen": {"view": RectangularPyramidScreenView,
+                                   "kv": "View/Shapes/ThreeD/RectangularPyramidScreen/rectangular_pyramid_screen.kv"},
+    "pentagonal pyramid screen": {"view": PentagonalPyramidScreenView,
+                                  "kv": "View/Shapes/ThreeD/PentagonalPyramidScreen/pentagonal_pyramid_screen.kv"},
 }
