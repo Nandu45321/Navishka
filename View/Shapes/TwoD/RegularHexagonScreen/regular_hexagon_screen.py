@@ -1,11 +1,5 @@
-from kivy.clock import Clock
 from kivy.metrics import dp
-from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import Screen
-from kivy3 import Mesh, Material
-from kivy3 import PerspectiveCamera
-from kivy3 import Renderer, Scene
-from kivy3.extras.geometries import BoxGeometry
 from kivymd.uix.snackbar import MDSnackbar, MDSnackbarText
 
 
