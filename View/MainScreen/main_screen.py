@@ -16,6 +16,7 @@ class SmallCard(MDCard):
         constant = 1
     else:
         constant = 2.65
+    small = 384 / constant
     medium = 425 / constant
     large = 478 / constant
     # 2.65

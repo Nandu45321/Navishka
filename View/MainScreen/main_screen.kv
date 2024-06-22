@@ -4,7 +4,7 @@
     id: customcard
     orientation: 'vertical'
     size_hint_y: None
-    height: 384/2.65
+    height: 200
     focus_behavior: True
     ripple_behavior: True
     style: "outlined"
@@ -62,6 +62,7 @@
                     inputs: 'Base, Height'
                     outputs: 'Area'
                     imagepath: 'Images/triangle.png'
+                    height: self.small
                     on_release: app.set_current_screen("triangle screen")
                 SmallCard:                                               # 2
                     shape: 'Equilateral Triangle'
@@ -74,14 +75,14 @@
                     shape: 'Quadrilateral'
                     inputs: 'Diagonal, Perpendicular Heights'
                     outputs: 'Area'
-                    height: self.large
+                    height: self.medium
                     imagepath: 'Images/quadrilateral.png'
                     on_release: app.set_current_screen("quadrilateral screen")
                 SmallCard:                                               # 3
                     shape: 'Parallelogram'
                     inputs: 'Height, Base, Side'
                     outputs: 'Area, Perimeter, Diagonals'
-                    height: self.medium
+                    height: self.large
                     imagepath: 'Images/parallelogram.png'
                     on_release: app.set_current_screen("parallelogram screen")
                 SmallCard:                                               # 1
@@ -89,12 +90,13 @@
                     inputs: 'Diagonals'
                     outputs: 'Area, Perimeter, Side'
                     imagepath: 'Images/rhombus.png'
+                    height: self.small
                     on_release: app.set_current_screen("rhombus screen")
                 SmallCard:                                               # 3
                     shape: 'Kite'
                     inputs: 'Diagonals, Sides'
                     outputs: 'Area, perimeter'
-                    height: self.medium
+                    height: self.large
                     imagepath: 'Images/kite.png'
                     on_release: app.set_current_screen("kite screen")
                 SmallCard:                                               # 2
@@ -102,26 +104,28 @@
                     inputs: 'Side'
                     outputs: 'Area, perimeter'
                     imagepath: 'Images/regularhexagon.png'
-                    height: self.large
+                    height: self.medium
                     on_release: app.set_current_screen("regular hexagon screen")
                 SmallCard:                                               # 1
                     shape: 'Regular Octagon'
                     inputs: 'Side'
                     outputs: 'Area, perimeter'
-                    height: self.medium
                     imagepath: 'Images/regularoctagon.png'
+                    height: self.small
                     on_release: app.set_current_screen("regular octagon screen")
                 SmallCard:                                               # 3
                     shape: 'Regular Decagon'
                     inputs: 'Side'
                     outputs: 'Area, perimeter'
                     imagepath: 'Images/Regulardecagon.png'
+                    height: self.large
                     on_release: app.set_current_screen("regular decagon screen")
                 SmallCard:                                               # 1
                     shape: 'Semi Circle'
                     inputs: 'Radius'
                     outputs: 'Area, perimeter'
                     imagepath: 'Images/semicircle.png'
+                    height: self.small
                     on_release: app.set_current_screen("semi circle screen")
 
             BoxLayout:
@@ -142,6 +146,7 @@
                     inputs: 'All Sides'
                     outputs: 'Area, Perimeter'
                     imagepath: 'Images/scalenetriangle.png'
+                    height: self.small
                     on_release: app.set_current_screen("scalene triangle screen")
                 SmallCard:                                               # 1
                     shape: 'Trapezium'
@@ -175,12 +180,13 @@
                     inputs: 'Side'
                     outputs: 'Area, perimeter'
                     imagepath: 'Images/Regularheptagon.png'
+                    height: self.small
                     on_release: app.set_current_screen("regular heptagon screen")
                 SmallCard:                                               # 3
                     shape: 'Regular Nonagon'
                     inputs: 'Side'
                     outputs: 'Area, perimeter'
-                    height: self.medium
+                    height: self.large
                     imagepath: 'Images/Regularnonagon.png'
                     on_release: app.set_current_screen("regular nonagon screen")
                 SmallCard:                                               # 2
@@ -195,6 +201,7 @@
                     inputs: 'X, Y'
                     outputs: 'Area, Circumference'
                     imagepath: 'Images/ellipse.png'
+                    height: self.medium
                     on_release: app.set_current_screen("ellipse screen")
 
 
@@ -220,6 +227,7 @@
                     inputs: 'Edge'
                     outputs: 'Volume, TSA, LSA, Diagonal'
                     imagepath: 'Images/cube.png'
+                    height: self.small
                     on_release: app.set_current_screen("cube screen")
                 SmallCard:                                               # 2
                     shape: 'Triangular Prism'
@@ -247,6 +255,7 @@
                     inputs: 'Edge'
                     outputs: 'Volume, TSA, Face Area, Height'
                     imagepath: 'Images/tetrahedron.png'
+                    height: self.small
                     on_release: app.set_current_screen("tetrahedron screen")
                 SmallCard:                                               # 3
                     shape: 'Dodecahedron'
@@ -267,6 +276,7 @@
                     inputs: 'X, Y, Z'
                     outputs: 'Volume, TSA'
                     imagepath: 'Images/ellipsoid1.png'
+                    height: self.small
                     on_release: app.set_current_screen("ellipsoid screen")
                 SmallCard:                                               # 3
                     shape: 'Cylinder'
@@ -311,12 +321,14 @@
                     inputs: 'Base Area, Base Perimeter, Slant Height, Height'
                     outputs: 'Volume, TSA, LSA'
                     imagepath: 'Images/trianglepyramid.png'
+                    height: self.small
                     on_release: app.set_current_screen("triangular pyramid screen")
                 SmallCard:                                               # 1
                     shape: 'Rectangular Pyramid'
                     inputs: 'Length, Breadth, Height'
                     outputs: 'Volume, TSA, LSA, Base Area'
                     imagepath: 'Images/rectangularpyramid.png'
+                    height: self.small
                     on_release: app.set_current_screen("rectangular pyramid screen")
                 SmallCard:                                               # 2
                     shape: 'Hexagonal Pyramid'
@@ -344,6 +356,7 @@
                     inputs: 'Radius'
                     outputs: 'Volume, TSA, LSA, Base Area, Circumference'
                     imagepath: 'Images/hemisphere.png'
+                    height: self.small
                     on_release: app.set_current_screen("hemi sphere screen")
                 SmallCard:                                               # 3
                     shape: 'Cone'
