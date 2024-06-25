@@ -15,7 +15,7 @@ class SmallCard(MDCard):
     if hasattr(sys, 'getandroidapilevel'):
         constant = 1
     else:
-        constant = 2.65
+        constant = 3
     small = 384 / constant
     medium = 425 / constant
     large = 478 / constant
