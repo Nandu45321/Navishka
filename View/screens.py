@@ -1,4 +1,3 @@
-import View.Shapes.ThreeD.OctahedronScreen.octahedron_screen
 from View.MainScreen.main_screen import MainScreenView
 from View.Shapes.ThreeD.CubeScreen.cube_screen import CubeScreenView
 from View.Shapes.ThreeD.CuboidScreen.cuboid_screen import CuboidScreenView

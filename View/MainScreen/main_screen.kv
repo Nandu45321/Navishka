@@ -4,14 +4,14 @@
     id: customcard
     orientation: 'vertical'
     size_hint_y: None
-    height: 200o
+    height: 200
 
     focus_behavior: True
     ripple_behavior: True
     style: "outlined"
-    focus_color: "purple"
+    #focus_color: "purple"
     elevation: 6
-    radius: 10
+    radius: 20
     FitImage:
         source: root.imagepath # "arch-linux-logo-png-clipart-1507156103.png"
         radius: 10,10,0,0
@@ -25,7 +25,7 @@
         size_hint: 1, 0.2
     MDLabel:
         text: root.inputs
-        text_font_size: 7
+        #text_font_size: 7
         halign: 'center'
         size_hint: 1, 0.2
     MDLabel:
@@ -50,8 +50,8 @@
         BoxLayout:
             size_hint_y: None
             height: self.minimum_height
-            padding: '3px'
-            spacing: '3px'
+            padding: '6px'
+            spacing: '6px'
             BoxLayout:
                 spacing: '3px'
                 orientation: 'vertical'
@@ -154,6 +154,7 @@
                     inputs: 'Height, All Sides'
                     outputs: 'Area, Perimeter'
                     imagepath: 'Images/Trapezium.png'
+                    height: self.small
                     on_release: app.set_current_screen("trapezium screen")
                 SmallCard:                                               # 2
                     shape: 'Rectangle'
